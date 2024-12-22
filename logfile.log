@@ -1,0 +1,8 @@
+INFO 2024-12-22 12:56:39,762 autoreload Watching for file changes with StatReloader
+INFO 2024-12-22 12:56:44,788 basehttp "GET / HTTP/1.1" 200 3716
+INFO 2024-12-22 12:56:44,904 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-22 12:56:44,905 basehttp "GET /static/js/flatpickr.js HTTP/1.1" 304 0
+INFO 2024-12-22 12:59:25,106 autoreload /workspaces/storage_manager/storage/apps.py changed, reloading.
+INFO 2024-12-22 12:59:26,703 autoreload Watching for file changes with StatReloader
+INFO 2024-12-22 12:59:34,762 autoreload /workspaces/storage_manager/salary/apps.py changed, reloading.
+INFO 2024-12-22 12:59:36,408 autoreload Watching for file changes with StatReloader

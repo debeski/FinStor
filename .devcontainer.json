@@ -1,0 +1,11 @@
+{
+  "name": "FinStor System DevEnv",
+  "dockerFile": "Dockerfile",
+  "context": ".",
+  "appPort": [8000],
+  "forwardPorts": [8000],
+  "remoteUser": "vscode", // Set the user to vscode to avoid permission issues
+  "mounts": [
+    "source=D:\\newP\\FinStor,target=/workspace/FinStor,type=bind"
+  ]
+}

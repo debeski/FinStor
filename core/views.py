@@ -1,12 +1,28 @@
 from django.shortcuts import render
 import logging
+from django.utils import timezone
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
 
-logger = logging.getLogger('documents')
+
+logger = logging.getLogger('FinStor')
+
+
+
+# Logger initiation Function:
+def log_action(action, model, object_id=None):
+    timestamp = timezone.now()
+    message = f"{timestamp} - Performed {action} on {model.__name__} (ID: {object_id})"
+    logger.info(message)
+
+
+
+def index(request):
+    return render(request, 'base.html')
+
 
 
 def user_login(request):
@@ -42,6 +58,7 @@ def user_login(request):
 
     # Render the index page with the login form if not authenticated
     return render(request, 'index.html', {'user_name': user_name})
+
 
 
 def clear_login_modal_flag(request):

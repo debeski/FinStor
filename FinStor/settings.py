@@ -130,13 +130,20 @@ DEFAULT_CHARSET = 'utf-8'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "core/static"),
+    os.path.join(BASE_DIR, "finance/static"),
+    os.path.join(BASE_DIR, "salary/static"),
     os.path.join(BASE_DIR, "storage/static"),
 ]
 
 # MEDIA_URL is the URL where files will be accessed from the browser
 MEDIA_URL = '/media/'
 # MEDIA_ROOT is the actual filesystem path where the files are stored
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'core/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'finance/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'salary/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'storage/media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -165,6 +172,21 @@ LOGGING = {
             'handlers': ['file'],
             'level': 'INFO',
             'propagate': True,
+        },
+        'core': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'finance': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'salary': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
         },
         'storage': {
             'handlers': ['file'],

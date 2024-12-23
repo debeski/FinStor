@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'django_tables2',
     'core',
     'storage',
     'treasury',
@@ -80,6 +82,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'FinStor.wsgi.application'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'  # or 'bootstrap5', depending on your version
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases

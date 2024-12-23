@@ -1,11 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import logging
 from django.utils import timezone
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
-
+from .forms import CompanyForm, DepartmentForm, AffiliateForm, EmployeeForm
+from .models import Company, Department, Affiliate, Employee
+from .tables import CompanyTable, DepartmentTable, AffiliateTable, EmployeeTable
 
 
 logger = logging.getLogger('FinStor')
@@ -70,3 +72,66 @@ def clear_login_modal_flag(request):
     else:
         return JsonResponse({'message': 'Invalid request method'}, status=405)
 
+
+
+def manage_sections(request, model_name):
+    if model_name == 'company':
+        form = CompanyForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('manage_sections', model_name='company')
+        companies = Company.objects.all()
+        company_table = CompanyTable(companies)
+
+        return render(request, 'manage_sections.html', {
+            'model_name': 'company',
+            'company_form': form,
+            'company_table': company_table,
+        })
+
+    elif model_name == 'department':
+        form = DepartmentForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('manage_sections', model_name='department')
+        departments = Department.objects.all()
+        department_table = DepartmentTable(departments)
+
+        return render(request, 'manage_sections.html', {
+            'model_name': 'department',
+            'department_form': form,
+            'department_table': department_table,
+        })
+
+    elif model_name == 'affiliate':
+        form = AffiliateForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('manage_sections', model_name='affiliate')
+        affiliates = Affiliate.objects.all()
+        affiliate_table = AffiliateTable(affiliates)
+
+        return render(request, 'manage_sections.html', {
+            'model_name': 'affiliate',
+            'affiliate_form': form,
+            'affiliate_table': affiliate_table,
+        })
+
+    elif model_name == 'employee':
+        form = EmployeeForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('manage_sections', model_name='employee')
+        employees = Employee.objects.all()
+        employee_table = EmployeeTable(employees)
+
+        return render(request, 'manage_sections.html', {
+            'model_name': 'employee',
+            'employee_form': form,
+            'employee_table': employee_table,
+        })
+
+    else:
+        return render(request, 'manage_sections.html', {
+            'model_name': None,
+        })

@@ -49,7 +49,7 @@ class Asset(models.Model):
         return self.name
 
 
-# Import Transaction Models:
+# Import Transaction Model:
 class ImportRecord(models.Model):
     trans_id = models.AutoField(primary_key=True)
     company = models.ForeignKey(Company, on_delete=models.PROTECT)
@@ -65,6 +65,7 @@ class ImportRecord(models.Model):
     def __str__(self):
         return f"Import {self.trans_id} - {self.date}"
 
+# Import Transaction Items:
 class ImportItem(models.Model):
     trans_id = models.ForeignKey(ImportRecord, related_name='items', on_delete=models.SET_NULL, null=True)
     asset = models.ForeignKey('Asset', related_name='ImportRecord', on_delete=models.PROTECT)
@@ -82,7 +83,7 @@ class ImportItem(models.Model):
     def __str__(self):
         return f"{self.asset.name} - {self.quantity} pcs"
 
-# Export Transaction Models:
+# Export Transaction Model:
 class ExportRecord(models.Model):
     trans_id = models.AutoField(primary_key=True)
     export_type = models.CharField(max_length=50, choices=[
@@ -104,6 +105,7 @@ class ExportRecord(models.Model):
     def __str__(self):
         return f"Export Record {self.trans_id} - {self.export_type} - {self.date}"
 
+# Export Transaction Items:
 class ExportItem(models.Model):
     trans_id = models.ForeignKey(ExportRecord, related_name='items', on_delete=models.SET_NULL, null=True)
     asset = models.ForeignKey('Asset', related_name='EmportRecord', on_delete=models.PROTECT)

@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.contenttypes.models import ContentType
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Field
-from .models import Department, Affiliate, Employee, Asset, ImportRecord, ImportItem, ExportRecord, ExportItem
+from .models import Department, Affiliate, Employee, Asset, ImportRecord, ImportItem, ExportRecord, ExportItem 
 
 
 

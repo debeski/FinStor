@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinStor - {% block title %}{% endblock %}</title>
+    {% load static %}
+    {% load custom_filters %}
+    <!-- Include Bootstrap CSS -->
+    {% comment %} <link rel="shortcut icon" href="{% static 'favicon.png' %}" type="image/x-icon"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'bootstrap5/bootstrap.rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap5/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'flatpickr/flatpickr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'flatpickr/monthSelect/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+</head>
+<body>
+    <!-- Title Bar -->
+    <div class="titlebar d-flex justify-content-between align-items-center">
+        {% if user.is_authenticated %}
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        {% endif %}
+            <a href="{% url 'index' %}" style="text-decoration: none; color: inherit;">
+                <h1>FinStor System{% block header %}{% endblock %}</h1>
+            </a>
+            <!-- The Login Button -->
+        {% if user.is_authenticated %}
+            <!-- Dropdown Button and Menu for Authenticated User -->
+            <div class="dropdown me-2" style="z-index: 1050;">
+                <button class="btn btn-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle">&nbsp;</i> {{ user.username }}
+                </button>
+                <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="userDropdown" style="min-width: 130px;">
+                    <!-- Logout option -->
+                    <li>
+                        <form method="POST" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="dropdown-item">
+                                تسجيل الخروج  &nbsp; <i class="bi bi-box-arrow-left"></i>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+<!-- SideBar -->
+    <div class="container-fluid layout">
+        {% if request.user.is_authenticated %}
+            <div class="accordion sidebar" id="sidebarAccordion">
+                        <!-- Storage Item Tree -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            المخازن
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse {% if '/storage/' in request.path %}show{% endif %}" aria-labelledby="headingOne" data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body p-0">
+                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='department' %}">
+                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">اذونات الصرف</button>
+                            </a>
+                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='affiliate' %}">
+                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">اذونات الاستلام</button>
+                            </a>
+                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='affiliate' %}">
+                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">التصنيفات</button>
+                            </a>                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='affiliate' %}">
+                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">الأصول</button>
+                            </a>
+                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='affiliate' %}">
+                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">الجرد العام</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>  <!-- Treasury Item Tree -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            الخزينة
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse {% if '/treasury/' in request.path %}show{% endif %}" aria-labelledby="headingTwo" data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body p-0">
+                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='employee' %}">
+                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">اذونات الصرف</button>
+                            </a>
+                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='company' %}">
+                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">حساب العهدة</button>
+                            </a>
+                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='company' %}">
+                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">حساب العهدة</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>  <!-- Salary Item Tree -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            المرتبات
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse {% if '/salary/' in request.path %}show{% endif %}" aria-labelledby="headingThree" data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body p-0">
+                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='employee' %}">
+                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">بيانات الموظفين</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>  <!-- Finance Item Tree -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            تقديرات الميزانية
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse {% if '/finance/' in request.path %}show{% endif %}" aria-labelledby="headingFour" data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body p-0">
+                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='employee' %}">
+                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}" >السنوات السابقة</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>  <!-- Manage Sections Item Tree -->
+                {% if request.user|is_in_group:"admins" %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            ادارة البيانات
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse {% if '/manage/' in request.path %}show{% endif %}" aria-labelledby="headingFive" data-bs-parent="#sidebarAccordion">
+                        <div class="accordion-body p-0">
+                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='department' %}">
+                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">التقسيمات الادارية</button>
+                            </a>
+                            <a class="acc-button-a {% if '/manage/affiliate/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='affiliate' %}">
+                                <button class="acc-button {% if '/manage/affiliate/' in request.path %}active{% endif %}">الجهات الاخرى</button>
+                            </a>
+                            <a class="acc-button-a {% if '/manage/employee/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='employee' %}">
+                                <button class="acc-button {% if '/manage/employee/' in request.path %}active{% endif %}">الموظفين</button>
+                            </a>
+                            <a class="acc-button-a {% if '/manage/company/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='company' %}">
+                                <button class="acc-button {% if '/manage/company/' in request.path %}active{% endif %}">الشركات</button>
+                            </a>
+                            <a class="acc-button-a" href="{% url 'admin:index' %}">
+                                <button class="acc-button">Admin Panel</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        {% endif %}
+            <!-- Content from other Htmls -->
+        <div class="main-content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    
+    <!-- ToggleMenu Functionality -->
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebarAccordion');
+            sidebar.classList.toggle('closed');
+        }
+    </script>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="{% static 'bootstrap5/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'flatpickr/flatpickr.min.js' %}"></script>
+    <script src="{% static 'flatpickr/monthSelect/index.js' %}"></script>
+    <script src="{% static 'flatpickr/locale/ar.js' %}"></script>
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> {% endcomment %}
+</body>
+</html>

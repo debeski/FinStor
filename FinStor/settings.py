@@ -36,12 +36,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 'adminlte3',
+    # 'adminlte3_theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    "crispy_bootstrap5",
+    'django_tables2',
+    'report_builder',
     'core',
     'storage',
     'treasury',
@@ -80,6 +86,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'FinStor.wsgi.application'
 
+# SUIT_CONFIG = {
+#     'ADMIN_NAME': 'My Admin',  # Custom admin name
+#     # ... other configurations
+# }
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -114,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'ar'
+# LANGUAGE_CODE = 'ar'
 
 TIME_ZONE = 'Etc/GMT-2'
 
@@ -130,13 +144,20 @@ DEFAULT_CHARSET = 'utf-8'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "core/static"),
+    os.path.join(BASE_DIR, "finance/static"),
+    os.path.join(BASE_DIR, "salary/static"),
     os.path.join(BASE_DIR, "storage/static"),
 ]
 
 # MEDIA_URL is the URL where files will be accessed from the browser
 MEDIA_URL = '/media/'
 # MEDIA_ROOT is the actual filesystem path where the files are stored
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'core/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'finance/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'salary/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'storage/media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -166,6 +187,21 @@ LOGGING = {
             'level': 'INFO',
             'propagate': True,
         },
+        'core': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'finance': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'salary': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
         'storage': {
             'handlers': ['file'],
             'level': 'INFO',
@@ -174,5 +210,5 @@ LOGGING = {
     },
 }
 
-# Redirect to the index page after logging out
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'index'  # Redirect to your index or home page
+LOGOUT_REDIRECT_URL = 'login'  # Redirect to login page after logout

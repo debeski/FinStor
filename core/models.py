@@ -3,66 +3,83 @@ from django.db import models
 
 # Entity Models:
 class Company(models.Model):
-    name = models.CharField(max_length=255)
-    address = models.CharField(max_length=255)
-    phone = models.CharField(max_length=15)
+    name = models.CharField(max_length=255, verbose_name="اسم الشركة")
+    address = models.CharField(max_length=255, verbose_name="العنوان", blank=True)
+    phone = models.CharField(max_length=15, verbose_name="رقم الهاتف", blank=True)
 
     class Meta:
-        verbose_name = "الشركة"
+        verbose_name = "شركة"
         verbose_name_plural = "الشركات"
-        ordering = ['name']  # Sort by created_at in descending order
+        ordering = ['name']
 
     def __str__(self):
         return self.name
 
 
 class Department(models.Model):
-    dept_types = [
-        ('GM', 'General Management'),
-        ('Department', 'Department'),
-        ('Office', 'Office'),
-        ('Section', 'Section'),
-    ]
-    type = models.CharField(max_length=50, choices=dept_types)
-    name = models.CharField(max_length=255)
+    type = models.CharField(max_length=50, choices=[
+        ('Department', 'ادارة'),
+        ('Office', 'مكتب'),
+        ('Section', 'قسم'),
+    ], verbose_name="التقسيم الاداري")
+    name = models.CharField(max_length=255, verbose_name="اسم التقسيم")
 
     class Meta:
-        verbose_name = "الادارة"
-        verbose_name_plural = "الادارات"
-        ordering = ['name']  # Sort by created_at in descending order
+        verbose_name = "تقسيم اداري"
+        verbose_name_plural = "التقسيمات الادارية"
+        ordering = ['name']
 
     def __str__(self):
         return self.name
 
 
 class Affiliate(models.Model):
-    name = models.CharField(max_length=255)
-    association = models.CharField(max_length=50, choices=[
-        ('Ministry', 'Ministry'),
-        ('Department', 'Department'),
-        ('Office', 'Office'),
-    ])
+    type = models.CharField(max_length=50, choices=[
+        ('Ministry', 'وزارة'),
+        ('Authority', 'هيئة'),
+        ('Center', 'مركز'),
+        ('Monitor', 'مراقبة'),
+        ('Project', 'مشروع'),
+
+    ], verbose_name="نوع الجهة")
+    name = models.CharField(max_length=255, verbose_name="اسم الجهة")
+    subtype = models.CharField(max_length=50, choices=[
+        ('Department', 'ادارة'),
+        ('Office', 'مكتب'),
+        ('Section', 'قسم'),
+    ], verbose_name="التقسيم الاداري")
+    subname = models.CharField(max_length=255, verbose_name="اسم التقسيم")
+    address = models.CharField(max_length=255, verbose_name="العنوان", blank=True)
 
     class Meta:
-        verbose_name = "الجهة"
-        verbose_name_plural = "الجهات"
-        ordering = ['-association']  # Sort by created_at in descending order
+        verbose_name = "جهة"
+        verbose_name_plural = "الجهات الاخرى"
+        ordering = ['-type']
 
     def __str__(self):
         return self.name
 
 
 class Employee(models.Model):
-    name = models.CharField(max_length=255)
-    job_title = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=15)
-    date_employed = models.DateField()
-
+    name = models.CharField(max_length=255, verbose_name="اسم الموظف")
+    job_title = models.CharField(max_length=50, choices=[
+        ('GM', 'المدير العام'),
+        ('dept_manager', 'مدير ادارة'),
+        ('offc_manager', 'مدير مكتب'),
+        ('sect_manager', 'رئيس قسم'),
+        ('unit_manager', 'رئيس وحدة'),
+        ('employee', 'موظف'),
+        ('financer', 'مراقب مالي'),
+    ], verbose_name="الوظيفة")
+    department = models.ForeignKey(Department, on_delete=models.PROTECT, verbose_name="الادارة/المكتب")
+    email = models.EmailField(verbose_name="البريد الالكتروني")
+    phone = models.CharField(max_length=15, verbose_name="رقم الهاتف")
+    date_employed = models.DateField(verbose_name="تاريخ التعيين")
+        
     class Meta:
-        verbose_name = "الموظف"
+        verbose_name = "موظف"
         verbose_name_plural = "الموظفين"
-        ordering = ['name']  # Sort by created_at in descending order
+        ordering = ['date_employed']
 
     def __str__(self):
         return self.name

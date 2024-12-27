@@ -36,6 +36,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'adminlte3',
+    'adminlte3_theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    "crispy_bootstrap5",
     'django_tables2',
+    'report_builder',
     'core',
     'storage',
     'treasury',
@@ -82,7 +86,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'FinStor.wsgi.application'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'  # or 'bootstrap5', depending on your version
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'My Admin',  # Custom admin name
+    # ... other configurations
+}
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -117,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'ar'
+# LANGUAGE_CODE = 'ar'
 
 TIME_ZONE = 'Etc/GMT-2'
 
@@ -199,5 +210,5 @@ LOGGING = {
     },
 }
 
-# Redirect to the index page after logging out
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'index'  # Redirect to your index or home page
+LOGOUT_REDIRECT_URL = 'login'  # Redirect to login page after logout

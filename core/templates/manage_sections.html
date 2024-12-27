@@ -1,61 +1,66 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
-{% load render_table from django_tables2 %}
+{% load django_tables2 %}
 {% load static %}
 
 {% block content %}
 <div class="container">
-    {% if model_name == 'company' %}
-        <h2>Create New Company</h2>
-        <form method="post">
+        {% if form %}
+        <h2>
+            {% if form.instance.id %}
+                تعديل {{ ar_name }}
+            {% else %}
+                اضافة {{ ar_name }}
+            {% endif %}
+        </h2>
+        
+        <form method="post" novalidate>
             {% csrf_token %}
-            {{ company_form|crispy }}
-            <button type="submit" class="btn btn-primary">Save</button>
+            {% crispy form %}
         </form>
 
-        <h3>Company List</h3>
-        {% load render_table %}
-        {% render_table company_table %}
-
-    {% elif model_name == 'department' %}
-        <h2>Create New Department</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ department_form|crispy }}
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
-
-        <h3>Department List</h3>
-        {% load render_table %}
-        {% render_table department_table %}
-
-    {% elif model_name == 'affiliate' %}
-        <h2>Create New Affiliate</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ affiliate_form|crispy }}
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
-
-        <h3>Affiliate List</h3>
-        {% load render_table %}
-        {% render_table affiliate_table %}
-
-    {% elif model_name == 'employee' %}
-        <h2>Create New Employee</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ employee_form|crispy }}
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
-
-        <h3>Employee List</h3>
-        {% load render_table %}
-        {% render_table employee_table %}
-
+        <h3>قائمة {{ ar_names }}</h3>
+        {% render_table table %}
     {% else %}
-        <h3>Select a valid model to manage.</h3>
+        <h3>حدث خطأ ما!</h3>
     {% endif %}
-</div>  <!-- Close the container div -->
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Flatpickr on all elements with the class 'flatpickr'
+        flatpickr('#monthSelector', {
+            position: "auto center",
+            locale: "ar",
+            altInput: true, // Show the input field
+            altFormat: "Y F", //defaults to "F Y"
+            plugins: [
+                new monthSelectPlugin({
+                dateFormat: "Y-m-d", //defaults to "F Y"
+
+                theme: "light" // defaults to "light"
+                })
+            ],
+        });
+    });
+</script>
+<script>
+    document.getElementById('id_type').addEventListener('change', function() {
+        var type = this.options[this.selectedIndex].text;  // Get the selected Arabic text
+        var nameField = document.getElementById('id_name');
+        nameField.value = type + ' ';  // Set the name field to the title followed by a space
+        nameField.focus();  // Move the focus to the name field
+        nameField.setSelectionRange(nameField.value.length, nameField.value.length);  // Place cursor at the end
+    });
+</script>
+<script>
+    document.getElementById('id_subtype').addEventListener('change', function() {
+        var type = this.options[this.selectedIndex].text;  // Get the selected Arabic text
+        var nameField = document.getElementById('id_subname');
+        nameField.value = type + ' ';  // Set the name field to the title followed by a space
+        nameField.focus();  // Move the focus to the name field
+        nameField.setSelectionRange(nameField.value.length, nameField.value.length);  // Place cursor at the end
+    });
+</script>
 
 {% endblock %}

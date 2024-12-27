@@ -17,6 +17,12 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Install Node.js from the default repository
+RUN apt-get update && \
+apt-get install -y nodejs npm && \
+apt-get clean && \
+rm -rf /var/lib/apt/lists/*
+
 # Set root password (not recommended for production)
 RUN echo 'root:1234567' | chpasswd
 

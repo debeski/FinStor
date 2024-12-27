@@ -23,7 +23,7 @@ def get_img_upload_path(instance, filename):
 
 
 # Asset Models:
-class Asset(models.Model):
+class AssetType(models.Model):
     asset_type = [
         ('Car', 'Car'),
         ('Electronic', 'Electronic'),
@@ -39,7 +39,14 @@ class Asset(models.Model):
         ('Food', 'Food'),
         ('Other', 'Other'),
     ]
-    type = models.CharField(max_length=50, choices=asset_type)
+    name = models.CharField(max_length=50, choices=asset_type)
+
+    def __str__(self):
+        return self.name
+
+
+class Asset(models.Model):
+    type = models.ForeignKey(AssetType, related_name='items', on_delete=models.PROTECT)
     name = models.CharField(max_length=255)
     brand = models.CharField(max_length=255)
     unit = models.CharField(max_length=50)
@@ -56,8 +63,10 @@ class ImportRecord(models.Model):
     date = models.DateField()
     assign_number = models.CharField(max_length=50)
     assign_date = models.DateField()
+    items = models.ManyToManyField(Asset, through='ImportItem')
     notes = models.TextField()
     pdf_file = models.FileField(upload_to=get_pdf_upload_path, blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
@@ -65,13 +74,16 @@ class ImportRecord(models.Model):
     def __str__(self):
         return f"Import {self.trans_id} - {self.date}"
 
+
 # Import Transaction Items:
 class ImportItem(models.Model):
-    trans_id = models.ForeignKey(ImportRecord, related_name='items', on_delete=models.SET_NULL, null=True)
+    trans_id = models.ForeignKey(ImportRecord, related_name='Importeditems', on_delete=models.SET_NULL, null=True)
     asset = models.ForeignKey('Asset', related_name='ImportRecord', on_delete=models.PROTECT)
     quantity = models.PositiveIntegerField()
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
     return_at = models.DateTimeField(blank=True, null=True)
     return_purpose = models.CharField(max_length=50, choices=[
         ('Damaged', 'Damaged'),
@@ -82,6 +94,7 @@ class ImportItem(models.Model):
 
     def __str__(self):
         return f"{self.asset.name} - {self.quantity} pcs"
+
 
 # Export Transaction Model:
 class ExportRecord(models.Model):
@@ -104,6 +117,7 @@ class ExportRecord(models.Model):
 
     def __str__(self):
         return f"Export Record {self.trans_id} - {self.export_type} - {self.date}"
+
 
 # Export Transaction Items:
 class ExportItem(models.Model):

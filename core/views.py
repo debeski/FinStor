@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 import logging
 from django.utils import timezone
-from .forms import CompanyForm, DepartmentForm, AffiliateForm, EmployeeForm
-from .models import Company, Department, Affiliate, Employee
-from .tables import CompanyTable, DepartmentTable, AffiliateTable, EmployeeTable
+from .forms import CompanyForm, DepartmentForm, AffiliateForm, SubAffiliateForm, EmployeeForm
+from .models import Company, Department, Affiliate, SubAffiliate, Employee
+from .tables import CompanyTable, DepartmentTable, AffiliateTable, SubAffiliateTable, EmployeeTable
 from django.contrib.auth.decorators import login_required
 # from django.http import JsonResponse
 # from django.contrib.auth import authenticate, login
@@ -27,6 +27,7 @@ def get_core_models(model_name=None):
         'company': Company,
         'department': Department,
         'affiliate': Affiliate,
+        'sub_affiliate': SubAffiliate,
         'employee': Employee,
     }
 
@@ -34,6 +35,7 @@ def get_core_models(model_name=None):
         'company': CompanyForm,
         'department': DepartmentForm,
         'affiliate': AffiliateForm,
+        'sub_affiliate': SubAffiliateForm,
         'employee': EmployeeForm,
     }
 
@@ -41,6 +43,7 @@ def get_core_models(model_name=None):
         'company': CompanyTable,
         'department': DepartmentTable,
         'affiliate': AffiliateTable,
+        'sub_affiliate': SubAffiliateTable,
         'employee': EmployeeTable,
     }
 
@@ -89,11 +92,13 @@ def manage_sections(request, model_name):
 
     form = form_class(request.POST or None, instance=instance)
     edited = True if document_id else False
+    in_name = instance.name if instance else None
 
     # Handle form submission
-    if request.method == 'POST' and form.is_valid():
-        form.save()
-        return redirect('manage_sections', model_name=model_name)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('manage_sections', model_name=model_name)
 
     # Fetch objects and create the table
     objects = model_class.objects.all()
@@ -111,8 +116,42 @@ def manage_sections(request, model_name):
         'edited': edited,
         'ar_name': ar_name,
         'ar_names': ar_names,
+        'id': in_name,
     })
 
+@login_required
+def sub_affiliate_view(request, affiliate_id, sub_id=None):
+    # Fetch the affiliate and its sub-affiliates
+    affiliate = get_object_or_404(Affiliate, id=affiliate_id)
+    sub_affiliates = SubAffiliate.objects.filter(affiliate=affiliate)
+
+    sub_id = request.GET.get('id')
+    instance = None
+    if sub_id:
+        instance = get_object_or_404(SubAffiliate, id=sub_id, affiliate=affiliate)
+    
+    # Prepare the table for sub-affiliates
+    table = SubAffiliateTable(sub_affiliates, affiliate_id=affiliate_id)
+    form = SubAffiliateForm(request.POST or None, instance=instance, affiliate_id=affiliate_id)
+    edited = bool(sub_id)
+    in_name = instance.subname if instance else None
+    if request.method == 'POST':
+        if form.is_valid():
+            # Save the form and ensure affiliate linkage
+            new_sub = form.save(commit=False)
+            new_sub.affiliate = affiliate  # Maintain foreign key relationship
+            new_sub.save()
+            return redirect('sub_affiliate_view', affiliate_id=affiliate_id)
+    
+    return render(request, 'manage_sections.html', {
+        'model_name': 'sub_affiliate',  # Set a model name for rendering
+        'table': table,
+        'form': form,
+        'ar_name': 'تقسيم اداري بـ' + affiliate.name,  # Dynamic AR name
+        'ar_names': 'التقسيمات الادارية بـ' + affiliate.name,
+        'edited': edited,
+        'id': in_name,
+    })
 
 
 # def clear_login_modal_flag(request):

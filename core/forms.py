@@ -1,10 +1,13 @@
 from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, Field, Fieldset, Div, HTML
-from crispy_forms.bootstrap import InlineField
-from .models import Company, Department, Affiliate, Employee
+from crispy_forms.layout import Submit, Layout, Field, Fieldset, Div, HTML, Button
+from crispy_forms.bootstrap import InlineField, FormActions
+from .models import Company, Department, Affiliate, SubAffiliate, Employee
 from django.db.models import Q
 import re
+from django.urls import reverse
+
+
 
 # Function to rename first choice in selection menu
 def set_first_choice(field, placeholder):
@@ -53,6 +56,12 @@ def set_field_attrs(form):
             # Add Flatpickr attributes for date fields
             field.widget.attrs['id'] = 'monthSelector'  # Class for Flatpickr
 
+# Function to generate cancel button URL
+def get_cancel_button_url(self, model_name):
+    if self.instance.id:
+        return f'<a href="{reverse("manage_sections", args=[model_name])}" class="btn btn-danger">إالغاء</a>'
+    return ''
+
 
 # Entity Forms
 class CompanyForm(forms.ModelForm):
@@ -67,7 +76,10 @@ class CompanyForm(forms.ModelForm):
             'name',
             'address',
             'phone',
-            Submit('submit', 'Save', css_class='btn btn-primary')
+            FormActions(
+                Submit('submit', '{% if form.instance.id %}تحديث{% else %}اضافة{% endif %}', css_class='btn btn-primary'),
+                HTML(get_cancel_button_url(self, 'employee'))
+            )
         )
         set_field_attrs(self)
 
@@ -83,11 +95,14 @@ class DepartmentForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Div(
-                Div(Field('type', css_class='form-control'), css_class='col-sm-2'),  # Small column for type
-                Div(Field('name', css_class='form-control'), css_class='col-sm-10'),  # Wider column for name
-                css_class='input-group mb-2'  # Bootstrap class for a row
+                Div(Field('type', css_class='form-control'), css_class='col-sm-2'),
+                Div(Field('name', css_class='form-control'), css_class='col-sm-10'),
+                css_class='input-group mb-2'
             ),
-            Submit('submit', '{% if form.instance.id %}تحديث{% else %}اضافة{% endif %}', css_class='btn btn-primary')
+            FormActions(
+                Submit('submit', '{% if form.instance.id %}تحديث{% else %}اضافة{% endif %}', css_class='btn btn-primary'),
+                HTML(get_cancel_button_url(self, 'department'))
+            )
         )
         set_field_attrs(self)
 
@@ -95,30 +110,71 @@ class DepartmentForm(forms.ModelForm):
 class AffiliateForm(forms.ModelForm):
     class Meta:
         model = Affiliate
-        fields = ['type', 'name', 'subtype', 'subname', 'address']
+        fields = ['type', 'name', 'address']
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         set_first_choice(self.fields['type'], 'نوع الجهة')
-        set_first_choice(self.fields['subtype'], 'التقسيم الاداري')
 
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Div(
-                Div(Field('type', css_class='form-control'), css_class='col-sm-2'),  # Small column for type
-                Div(Field('name', css_class='form-control'), css_class='col-sm-10'),  # Wider column for name
-                css_class='input-group mb-2'  # Bootstrap class for a row
-            ),
-            Div(
-                Div(Field('subtype', css_class='form-control'), css_class='col-sm-2'),  # Small column for type
-                Div(Field('subname', css_class='form-control'), css_class='col-sm-10'),  # Wider column for name
-                css_class='input-group mb-2'  # Bootstrap class for a row
+                Div(Field('type', css_class='form-control'), css_class='col-sm-2'),
+                Div(Field('name', css_class='form-control'), css_class='col-sm-10'),
+                css_class='input-group mb-2'
             ),
             Field('address', css_class='form-control'),
-            Submit('submit', '{% if form.instance.id %}تحديث{% else %}اضافة{% endif %}', css_class='btn btn-primary')
+            FormActions(
+                Submit('submit', '{% if form.instance.id %}تحديث{% else %}اضافة{% endif %}', css_class='btn btn-primary'),
+                HTML(get_cancel_button_url(self, 'affiliate'))
+            )
         )
         set_field_attrs(self)
 
+
+class SubAffiliateForm(forms.ModelForm):
+    class Meta:
+        model = SubAffiliate
+        fields = ['subname', 'subtype']  # Make sure to include affiliate field if needed
+
+    def __init__(self, *args, **kwargs):
+        self.affiliate_id = kwargs.pop('affiliate_id', None)
+        super().__init__(*args, **kwargs)
+        # set_first_choice(self.fields['affiliate'], 'اختر الجهة')
+        set_first_choice(self.fields['subtype'], 'التقسيم الاداري')
+
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            # Field('affiliate', css_class='form-control'),
+            Div(
+                Div(Field('subtype', css_class='form-control'), css_class='col-sm-2'),
+                Div(Field('subname', css_class='form-control'), css_class='col-sm-10'),
+                css_class='input-group mb-2'
+            ),
+
+            FormActions(
+                Submit('submit', '{% if form.instance.id %}تحديث{% else %}اضافة{% endif %}', css_class='btn btn-primary'),
+                HTML(self.get_cancel_button_url())
+            )
+        )
+        set_field_attrs(self)
+    
+    def save(self, commit=True):
+        # Overriding the save method to automatically set the affiliate
+        instance = super().save(commit=False)
+        if self.affiliate_id:
+            instance.affiliate_id = self.affiliate_id  # Set the affiliate from the passed ID
+        if commit:
+            instance.save()
+        return instance
+
+    def get_cancel_button_url(self):
+        # Check if the instance has an ID
+        if self.instance.id:
+            # Generate the URL for the cancel button
+            return f'<a href="{reverse("sub_affiliate_view", args=[self.instance.affiliate.id])}" class="btn btn-danger">إالغاء</a>'
+        return ''  # Return an empty string if no ID
+        
 
 class EmployeeForm(forms.ModelForm):
     class Meta:
@@ -129,23 +185,27 @@ class EmployeeForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         set_first_choice(self.fields['job_title'], 'الوظيفة')
         set_first_choice(self.fields['department'], 'الادارة/المكتب')
+
         # Filter the queryset for the department field
-        self.fields['department'].queryset = Department.objects.filter(Q(type='Department') | Q(type='Office'))
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Field('name', css_class='form-control'),
             Div(
-                Div(Field('job_title', css_class='form-control'), css_class='col-sm-4'),  # Small column for type
-                Div(Field('department', css_class='form-control'), css_class='col-sm-8'),  # Wider column for name
-                css_class='input-group mb-1'  # Bootstrap class for a row
+                Div(Field('job_title', css_class='form-control'), css_class='col-sm-4'),
+                Div(Field('department', css_class='form-control'), css_class='col-sm-8'),
+                css_class='input-group mb-1'
             ),
             Div(
-                Div(Field('email', css_class='form-control'), css_class='col-sm-4'),  # Small column for type
-                Div(Field('phone', css_class='form-control'), css_class='col-sm-4'),  # Wider column for name
-                Div(Field('date_employed', css_class='form-control'), css_class='col-sm-4'),  # Wider column for name
-                css_class='input-group mb-1'  # Bootstrap class for a row
+                Div(Field('email', css_class='form-control'), css_class='col-sm-4'),
+                Div(Field('phone', css_class='form-control'), css_class='col-sm-4'),
+                Div(Field('date_employed', css_class='form-control'), css_class='col-sm-4'),
+                css_class='input-group mb-1'
             ),
-            Submit('submit', '{% if form.instance.id %}تحديث{% else %}اضافة{% endif %}', css_class='btn btn-primary')
+
+            FormActions(
+                Submit('submit', '{% if form.instance.id %}تحديث{% else %}اضافة{% endif %}', css_class='btn btn-primary'),
+                HTML(get_cancel_button_url(self, 'employee'))
+            )
         )
         set_field_attrs(self)
 

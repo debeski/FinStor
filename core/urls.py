@@ -11,4 +11,5 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     # path('clear_login_modal_flag/', views.clear_login_modal_flag, name='clear_login_modal_flag'),
     path('manage/<str:model_name>/', views.manage_sections, name='manage_sections'),
+    path('manage/affiliate/subs/<int:affiliate_id>/', views.sub_affiliate_view, name='sub_affiliate_view'),
 ]

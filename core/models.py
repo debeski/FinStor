@@ -21,6 +21,7 @@ class Department(models.Model):
         ('Department', 'ادارة'),
         ('Office', 'مكتب'),
         ('Section', 'قسم'),
+        ('Unit', 'وحدة'),
     ], verbose_name="التقسيم الاداري")
     name = models.CharField(max_length=255, verbose_name="اسم التقسيم")
 
@@ -43,35 +44,45 @@ class Affiliate(models.Model):
 
     ], verbose_name="نوع الجهة")
     name = models.CharField(max_length=255, verbose_name="اسم الجهة")
-    subtype = models.CharField(max_length=50, choices=[
-        ('Department', 'ادارة'),
-        ('Office', 'مكتب'),
-        ('Section', 'قسم'),
-    ], verbose_name="التقسيم الاداري")
-    subname = models.CharField(max_length=255, verbose_name="اسم التقسيم")
     address = models.CharField(max_length=255, verbose_name="العنوان", blank=True)
 
     class Meta:
         verbose_name = "جهة"
         verbose_name_plural = "الجهات الاخرى"
-        ordering = ['-type']
+        ordering = ['-name']
 
     def __str__(self):
         return self.name
+
+
+class SubAffiliate(models.Model):
+    affiliate = models.ForeignKey(Affiliate, related_name='subaffiliates', on_delete=models.CASCADE)
+    subname = models.CharField(max_length=255, verbose_name="اسم التقسيم")
+    subtype = models.CharField(max_length=50, choices=[
+        ('Department', 'ادارة'),
+        ('Office', 'مكتب'),
+        ('Section', 'قسم'),
+    ], verbose_name="التقسيم الاداري")
+
+    class Meta:
+        verbose_name = "تقسيم فرعي"
+        verbose_name_plural = "التقسيمات الفرعية"
+        ordering = ['-subtype']
+
+    def __str__(self):
+        return self.subname
 
 
 class Employee(models.Model):
     name = models.CharField(max_length=255, verbose_name="اسم الموظف")
     job_title = models.CharField(max_length=50, choices=[
         ('GM', 'المدير العام'),
-        ('dept_manager', 'مدير ادارة'),
-        ('offc_manager', 'مدير مكتب'),
-        ('sect_manager', 'رئيس قسم'),
-        ('unit_manager', 'رئيس وحدة'),
+        ('manager', 'مدير'),
+        ('chief', 'رئيس'),
         ('employee', 'موظف'),
         ('financer', 'مراقب مالي'),
     ], verbose_name="الوظيفة")
-    department = models.ForeignKey(Department, on_delete=models.PROTECT, verbose_name="الادارة/المكتب")
+    department = models.ForeignKey(Department, related_name='deptemployees', on_delete=models.PROTECT, verbose_name="الادارة/المكتب")
     email = models.EmailField(verbose_name="البريد الالكتروني")
     phone = models.CharField(max_length=15, verbose_name="رقم الهاتف")
     date_employed = models.DateField(verbose_name="تاريخ التعيين")

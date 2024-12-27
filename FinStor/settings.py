@@ -36,8 +36,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'adminlte3',
-    'adminlte3_theme',
+    # 'adminlte3',
+    # 'adminlte3_theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,10 +86,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'FinStor.wsgi.application'
 
-SUIT_CONFIG = {
-    'ADMIN_NAME': 'My Admin',  # Custom admin name
-    # ... other configurations
-}
+# SUIT_CONFIG = {
+#     'ADMIN_NAME': 'My Admin',  # Custom admin name
+#     # ... other configurations
+# }
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 

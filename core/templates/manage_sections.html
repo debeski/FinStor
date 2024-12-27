@@ -5,22 +5,28 @@
 
 {% block content %}
 <div class="container">
-        {% if form %}
+    {% if form %}
         <h2>
             {% if form.instance.id %}
-                تعديل {{ ar_name }}
+                تعديل بيانات {{ id }}
             {% else %}
                 اضافة {{ ar_name }}
             {% endif %}
         </h2>
-        
         <form method="post" novalidate>
             {% csrf_token %}
             {% crispy form %}
         </form>
+    {% endif %}
 
-        <h3>قائمة {{ ar_names }}</h3>
+    {% if table %}
+        <h3>{{ ar_names }}</h3>
         {% render_table table %}
+        {% if model_name == 'sub_affiliate' %}
+            <div class="pt-3">
+                <a href="{% url 'manage_sections' model_name='affiliate' %}" class="btn btn-secondary">رجوع</a>
+            </div>
+        {% endif %}
     {% else %}
         <h3>حدث خطأ ما!</h3>
     {% endif %}

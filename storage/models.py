@@ -22,35 +22,44 @@ def get_img_upload_path(instance, filename):
 
 
 
-# Asset Models:
-class AssetType(models.Model):
-    asset_type = [
-        ('Car', 'Car'),
-        ('Electronic', 'Electronic'),
-        ('Computer', 'Computer'),
-        ('Hardware', 'Hardware'),
-        ('Printers', 'Printers'),
-        ('Office', 'Office'),
-        ('Appliance', 'Appliance'),
-        ('Electrical', 'Electrical'),
-        ('Equipment', 'Equipment'),
-        ('Furniture', 'Furniture'),
-        ('Cleaner', 'Cleaner'),
-        ('Food', 'Food'),
-        ('Other', 'Other'),
-    ]
-    name = models.CharField(max_length=50, choices=asset_type)
+class AssetCategory(models.Model):
+    name = models.CharField(max_length=255, unique=True, verbose_name="اسم التصنيف")
+    discription = models.CharField(max_length=255, blank=True, verbose_name="التفاصيل...")  # For Arabic or other descriptive names
 
     def __str__(self):
         return self.name
 
 
+# Asset Models:
 class Asset(models.Model):
-    type = models.ForeignKey(AssetType, related_name='items', on_delete=models.PROTECT)
-    name = models.CharField(max_length=255)
-    brand = models.CharField(max_length=255)
-    unit = models.CharField(max_length=50)
-    quantity = models.PositiveIntegerField(default=0)
+    ASSET_TYPES = [
+        ('Car', 'سيارات'),
+        ('Electronic', 'الكترونيات'),
+        ('Computer', 'اجهزة تقنية'),
+        ('Hardware', 'قطع غيار تقنية'),
+        ('Printers', 'طابعات وماسحات'),
+        ('Office', 'مكتبية'),
+        ('Appliance', 'كهرومنزلية'),
+        ('Electrical', 'كهربائية'),
+        ('Equipment', 'معدات ورش'),
+        ('Furniture', 'اثاث'),
+        ('Cleaner', 'مواد تنظيف'),
+        ('Food', 'مواد اعاشة'),
+        ('Other', 'اخرى'),
+    ]
+
+    category = models.ForeignKey(AssetCategory, on_delete=models.PROTECT, related_name='assets', blank=True, verbose_name="التصنيف")
+    name = models.CharField(max_length=255, verbose_name="اسم الصنف")
+    brand = models.CharField(max_length=255, verbose_name="الماركة", blank=True)
+    unit = models.CharField(max_length=50, choices=[
+        ('piece', 'قطعة'),
+        ('box', 'علبة'),
+    ], verbose_name="وحدة القياس", default='piece')
+
+    class Meta:
+        verbose_name = "صنف"
+        verbose_name_plural = "اصناف"
+        ordering = ['-category']
 
     def __str__(self):
         return self.name
@@ -106,9 +115,9 @@ class ExportRecord(models.Model):
         ('Loan', 'Loan'),
     ])
     # ContentType for dynamic ForeignKey
-    entity_content_type = models.ForeignKey(ContentType, on_delete=models.PROTECT)
-    entity_object_id = models.PositiveIntegerField()
-    entity_selection = GenericForeignKey('entity_content_type', 'entity_object_id')
+    # entity_content_type = models.ForeignKey(ContentType, on_delete=models.PROTECT)
+    # entity_object_id = models.PositiveIntegerField()
+    # entity_selection = GenericForeignKey('entity_content_type', 'entity_object_id')
     date = models.DateField()
     notes = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

@@ -1,3 +1,3 @@
-this is startup project to build an Arabic, intuitive, easy-to-use robust system for companies assets and finances management.
+this is a startup project to build an Arabic, intuitive, easy-to-use all-around system for companie's assets and finance management.
 
-sas of 2024-12-28 - the core apps is finished and tested -the storage app has basic asset models and management functions.
+as of 2024-12-28 - the core apps is finished and tested -the storage app has basic asset models and management functions.

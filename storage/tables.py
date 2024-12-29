@@ -30,6 +30,8 @@ class AssetTable(tables.Table):
 
 
 class ImportRecordTable(tables.Table):
+    details = tables.Column(accessor='trans_id', verbose_name='*', empty_values=())
+
     # Define table columns
     trans_id = tables.Column()
     company = tables.Column()
@@ -40,4 +42,5 @@ class ImportRecordTable(tables.Table):
         template_name = "django_tables2/bootstrap5.html"  # You can choose a different template style
         fields = ("trans_id", "date", "assign_number", "assign_date", "items", "company")  # Fields to display in the table
 
-
+    def render_details(self, value):
+        return mark_safe(f'<a href="{reverse("import_details", args=[value])}" class="btn btn-secondary">عرض</a>')

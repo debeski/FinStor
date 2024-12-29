@@ -7,7 +7,7 @@ from babel.dates import format_date
 
 # Entity Models
 class CompanyTable(tables.Table):
-    edit = tables.Column(accessor='id', verbose_name='Action', empty_values=())
+    edit = tables.Column(accessor='id', verbose_name='*', empty_values=())
 
     def __init__(self, *args, model_name=None, **kwargs):
         super().__init__(*args, **kwargs)
@@ -23,7 +23,7 @@ class CompanyTable(tables.Table):
 
 
 class DepartmentTable(tables.Table):
-    edit = tables.Column(accessor='id', verbose_name='Action', empty_values=())
+    edit = tables.Column(accessor='id', verbose_name='*', empty_values=())
 
     def __init__(self, *args, model_name=None, **kwargs):
         super().__init__(*args, **kwargs)
@@ -39,7 +39,7 @@ class DepartmentTable(tables.Table):
 
 
 class SubAffiliateTable(tables.Table):
-    edit = tables.Column(accessor='id', verbose_name='Action', empty_values=())
+    edit = tables.Column(accessor='id', verbose_name='*', empty_values=())
 
     def __init__(self, *args, affiliate_id=None, model_name=None, **kwargs):
         super().__init__(*args, **kwargs)
@@ -57,7 +57,7 @@ class SubAffiliateTable(tables.Table):
 
 class AffiliateTable(tables.Table):
     subs = tables.Column(accessor='id', verbose_name='التقسيمات الفرعية', empty_values=())
-    edit = tables.Column(accessor='id', verbose_name='Action', empty_values=())
+    edit = tables.Column(accessor='id', verbose_name='*', empty_values=())
 
     def __init__(self, *args, model_name=None, **kwargs):
         super().__init__(*args, **kwargs)
@@ -80,7 +80,7 @@ class AffiliateTable(tables.Table):
 
 
 class EmployeeTable(tables.Table):
-    edit = tables.Column(accessor='id', verbose_name='Action', empty_values=())
+    edit = tables.Column(accessor='id', verbose_name='*', empty_values=())
 
     def __init__(self, *args, model_name=None, **kwargs):
         super().__init__(*args, **kwargs)

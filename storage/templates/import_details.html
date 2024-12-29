@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load django_tables2 %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>اذن استلام رقم {{ record.trans_id }}</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <p><strong>رقم الهاتف:</strong> {{ record.company.phone }}</p>
+            <p><strong>العنوان:</strong> {{ record.company.address }}</p>
+        </div>
+        <div class="col-md-6">
+            <p><strong>اسم الشركة:</strong> {{ record.company }}</p>
+            <p><strong>تاريخ الاستلام:</strong> {{ record.date }}</p>
+            <p><strong>رقم امر التكليف:</strong> {{ record.assign_number }}</p>
+            <p><strong>تاريخ امر التكليف:</strong> {{ record.assign_date }}</p>
+        </div>
+
+    <!-- Add other relevant fields from the record -->
+    &nbsp;
+    <h3>قائمة الاصناف</h3>
+    <table class="table table-striped table-bordered mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Item Name</th>
+                <th>Brand</th>
+                <th>Quantity</th>
+                <th>Price (per unit)</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for asset in related_assets %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ asset.name }}</td>
+                    <td>{{ asset.brand }}</td>
+                    <td>{{ asset.quantity }}</td>
+                    <td>{{ asset.price }}</td>
+                    <td>{{ asset.total }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr class="table-secondary">
+                <td colspan="5" class="text-end"><strong>الاجمالي:</strong></td>
+                <td>{{ related_assets|sum_total }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>{% endblock %}

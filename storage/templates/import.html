@@ -5,10 +5,8 @@
 
 {% block content %}
 <div class="container mt-3">
-    <h2>Import Records</h2>
-
     <!-- Button to create a new Import Record -->
-    <a href="{% url 'import_create' %}" class="btn btn-primary mb-3">Add New Record</a>
+    <a href="{% url 'import_create' %}" class="btn btn-primary mb-4">اذن استلام جديد</a>
 
     <!-- Render the table -->
     {% render_table table %}

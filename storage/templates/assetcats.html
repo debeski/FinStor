@@ -8,7 +8,7 @@
 <div class="container mt-2">
     <!-- Add/Edit Form -->
     <div class="row">
-        <h3>{% if editing %}تعديل{% else %}اضافة{% endif %} تصنيف</h3>
+        <h2 class="p-2">{% if editing %}تعديل{% else %}اضافة{% endif %} تصنيف</h2>
         <form method="post">
             {% csrf_token %}
             {% crispy form %}
@@ -16,7 +16,7 @@
     </div>
     <div class="row">
         <!-- Categories Table -->
-        <h3>قائمة التصنيفات</h3>
+        <h3 class="p-2">التصنيفات</h3>
         {% render_table table %}
     </div>
 </div>

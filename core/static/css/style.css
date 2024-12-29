@@ -119,7 +119,6 @@ body {
     display: flex;
     flex-direction:column;
     flex-grow: 3;
-    margin: 15px; /* Combined margins for simplicity */
 }
 
 /* Sidebar Design */

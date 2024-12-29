@@ -110,14 +110,21 @@ class ImportRecordForm(forms.ModelForm):
             Field('notes', css_class='form-control', rows=1),
             FormActions(
                 Submit('submit_record', 'حفظ اذن الاستلام', css_class='btn btn-primary'),
+                HTML('<a href="{% url \'import_cancel\' %}" class="btn btn-danger">الغاء</a>'),
             )
         )
         set_field_attrs(self)
 
 class ImportItemForm(forms.ModelForm):
+
+    asset_cat = forms.ModelChoiceField(
+    queryset=AssetCategory.objects.all(),
+    required=False,
+    label="اختر التصنيف"
+)
     class Meta:
         model = ImportItem
-        fields = ['asset', 'price', 'quantity']
+        fields = ['asset_cat', 'asset', 'price', 'quantity']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -135,10 +142,11 @@ class ImportItemForm(forms.ModelForm):
         })
         self.helper = FormHelper()
         self.helper.layout = Layout(
-            Field('asset', css_class='form-control'),
+            Field('asset_cat', css_class='form-control', id='id_asset_cat'),
+            Field('asset', css_class='form-control', id='id_asset'),
             Div(
-                Div(Field('quantity', css_class='form-control'), css_class='col-sm-4'),
-                Div(Field('price', css_class='form-control'), css_class='col-sm-4'),
+                Div(Field('quantity', css_class='form-control'), css_class='col-sm-6'),
+                Div(Field('price', css_class='form-control'), css_class='col-sm-6'),
                 css_class='input-group mb-1'
             ),
             FormActions(

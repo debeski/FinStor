@@ -20,7 +20,21 @@ def get_img_upload_path(instance, filename):
     """Get the upload path for IMG files."""
     return f'item_img/{generate_random_filename(instance, filename)}'
 
-
+    # ASSET_TYPES = [
+    #     ('Car', 'سيارات'),
+    #     ('Electronic', 'الكترونيات'),
+    #     ('Computer', 'اجهزة تقنية'),
+    #     ('Hardware', 'قطع غيار تقنية'),
+    #     ('Printers', 'طابعات وماسحات'),
+    #     ('Office', 'مكتبية'),
+    #     ('Appliance', 'كهرومنزلية'),
+    #     ('Electrical', 'كهربائية'),
+    #     ('Equipment', 'معدات ورش'),
+    #     ('Furniture', 'اثاث'),
+    #     ('Cleaner', 'مواد تنظيف'),
+    #     ('Food', 'مواد اعاشة'),
+    #     ('Other', 'اخرى'),
+    # ]
 
 class AssetCategory(models.Model):
     name = models.CharField(max_length=255, unique=True, verbose_name="اسم التصنيف")
@@ -32,22 +46,6 @@ class AssetCategory(models.Model):
 
 # Asset Models:
 class Asset(models.Model):
-    ASSET_TYPES = [
-        ('Car', 'سيارات'),
-        ('Electronic', 'الكترونيات'),
-        ('Computer', 'اجهزة تقنية'),
-        ('Hardware', 'قطع غيار تقنية'),
-        ('Printers', 'طابعات وماسحات'),
-        ('Office', 'مكتبية'),
-        ('Appliance', 'كهرومنزلية'),
-        ('Electrical', 'كهربائية'),
-        ('Equipment', 'معدات ورش'),
-        ('Furniture', 'اثاث'),
-        ('Cleaner', 'مواد تنظيف'),
-        ('Food', 'مواد اعاشة'),
-        ('Other', 'اخرى'),
-    ]
-
     category = models.ForeignKey(AssetCategory, on_delete=models.PROTECT, related_name='assets', blank=True, verbose_name="التصنيف")
     name = models.CharField(max_length=255, unique=True, verbose_name="اسم الصنف")
     brand = models.CharField(max_length=255, verbose_name="العلامة بالعربية", blank=True)
@@ -70,14 +68,14 @@ class Asset(models.Model):
 
 # Import Transaction Model:
 class ImportRecord(models.Model):
-    trans_id = models.AutoField(primary_key=True)
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True)
-    date = models.DateField()
-    assign_number = models.CharField(max_length=50, blank=True, null=True)
-    assign_date = models.DateField()
-    items = models.ManyToManyField(Asset, through='ImportItem')
-    notes = models.TextField(blank=True)
-    pdf_file = models.FileField(upload_to=get_pdf_upload_path, blank=True)
+    trans_id = models.AutoField(primary_key=True, verbose_name="رقم الاذن")
+    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, verbose_name="الشركة")
+    date = models.DateField(verbose_name="تاريخ الاذن")
+    assign_number = models.CharField(max_length=50, blank=True, null=True, verbose_name="رقم التكليف")
+    assign_date = models.DateField(verbose_name="تاريخ التكليف")
+    items = models.ManyToManyField(Asset, through='ImportItem', verbose_name="الاصناف") 
+    notes = models.TextField(blank=True, null=True, verbose_name="ملاحظات")
+    pdf_file = models.FileField(upload_to=get_pdf_upload_path, blank=True, verbose_name="ملف PDF")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -106,7 +104,7 @@ class ImportItem(models.Model):
     deleted_at = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
-        return f"{self.asset.name} - {self.quantity} pcs"
+        return f"{self.asset.name} - {self.quantity}"
 
 
 # Export Transaction Model:

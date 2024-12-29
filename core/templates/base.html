@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,8 +61,8 @@
                             <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='department' %}">
                                 <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">اذونات الصرف</button>
                             </a>
-                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'import_records' %}">
-                                <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">اذونات الاستلام</button>
+                            <a class="acc-button-a {% if '/storage/import/' in request.path %}active{% endif %}" href="{% url 'import_records' %}">
+                                <button class="acc-button {% if '/storage/import/' in request.path %}active{% endif %}">اذونات الاستلام</button>
                             </a>
                             <a class="acc-button-a {% if '/storage/categories/' in request.path %}active{% endif %}" href="{% url 'manage_category' %}">
                                 <button class="acc-button {% if '/storage/categories/' in request.path %}active{% endif %}">التصنيفات</button>
@@ -155,7 +155,7 @@
             </div>
         {% endif %}
             <!-- Content from other Htmls -->
-        <div class="main-content">
+        <div class="main-content m-2">
             {% block content %}{% endblock %}
         </div>
     </div>

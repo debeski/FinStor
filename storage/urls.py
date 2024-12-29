@@ -14,6 +14,9 @@ urlpatterns = [
     path("storage/import/new/add/", views.import_item_add, name="import_item_add"),
     path('storage/import/new/<int:asset_id>/', views.import_item_delete, name='import_item_delete'),
     path('storage/import/new/cancel', views.import_cancel, name='import_cancel'),
+    path('storage/import/<int:trans_id>/', views.import_details, name='import_details'),
+    path('get_assets/<int:category_id>/', views.get_assets, name='get_assets'),
+
     # path('storage/import/edit/<int:trans_id>/', views.import_record_edit, name='import_item_edit'),
     # path('storage/import/record/delete/<int:trans_id>/', views.import_record_delete, name='import_record_delete'),
 

@@ -21,6 +21,12 @@ def is_in_group(user, group_name):
     """Check if a user is a member of a given group."""
     return user.groups.filter(name=group_name).exists()
 
+
+@register.filter
+def sum_total(assets):
+    return sum(asset['total'] for asset in assets)
+
+
 # @register.filter
 # def distinct_years(queryset):
 #     try:

@@ -34595,3 +34595,2301 @@ INFO 2024-12-29 12:48:19,570 basehttp "GET /storage/import/ HTTP/1.1" 200 18506
 INFO 2024-12-29 13:00:25,073 autoreload /workspaces/FinStor/storage/models.py changed, reloading.
 INFO 2024-12-29 13:00:27,993 autoreload Watching for file changes with StatReloader
 INFO 2024-12-29 13:02:50,607 basehttp "GET /storage/import/ HTTP/1.1" 200 18506
+INFO 2024-12-29 14:08:35,488 autoreload /workspaces/FinStor/storage/tables.py changed, reloading.
+INFO 2024-12-29 14:08:38,910 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 14:08:41,407 basehttp "GET /storage/import/ HTTP/1.1" 200 19378
+INFO 2024-12-29 14:09:35,538 autoreload /workspaces/FinStor/storage/tables.py changed, reloading.
+INFO 2024-12-29 14:09:37,942 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 14:09:46,452 basehttp "GET /storage/import/ HTTP/1.1" 200 19375
+INFO 2024-12-29 14:09:47,913 basehttp "GET /storage/import/ HTTP/1.1" 200 19375
+INFO 2024-12-29 14:09:47,991 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 14:09:47,994 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 14:09:47,996 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 14:09:48,005 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 14:09:48,023 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 14:09:48,027 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 14:09:48,027 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 14:09:48,034 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 14:09:48,038 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 14:09:48,073 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 14:09:48,074 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 14:09:48,086 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 14:09:48,140 log Not Found: /favicon.ico
+WARNING 2024-12-29 14:09:48,140 basehttp "GET /favicon.ico HTTP/1.1" 404 5807
+INFO 2024-12-29 14:10:07,799 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 14787
+INFO 2024-12-29 14:10:16,318 basehttp "POST /manage/affiliate/ HTTP/1.1" 302 0
+INFO 2024-12-29 14:10:16,411 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15410
+INFO 2024-12-29 14:10:20,611 basehttp "GET /manage/affiliate/subs/1/ HTTP/1.1" 200 14304
+INFO 2024-12-29 14:10:21,774 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15410
+INFO 2024-12-29 14:10:34,924 autoreload /workspaces/FinStor/storage/tables.py changed, reloading.
+INFO 2024-12-29 14:10:37,044 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 14:10:41,442 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15410
+ERROR 2024-12-29 14:10:43,697 log Internal Server Error: /storage/import/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 116, in import_records
+    return render(request, 'import.html', {'table': table})
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django_tables2/templatetags/django_tables2.py", line 166, in render
+    return template.render(context={"table": table}, request=request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 198, in render
+    values = list(values)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django_tables2/rows.py", line 244, in items
+    column.current_value = self.get_cell(column.name)
+                           ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django_tables2/rows.py", line 197, in get_cell
+    return self._get_and_render_with(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bound_column, render_func=self._call_render, default=bound_column.default
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django_tables2/rows.py", line 173, in _get_and_render_with
+    return render_func(bound_column, value)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django_tables2/rows.py", line 206, in _call_render
+    content = call_with_appropriate(bound_column.render, render_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django_tables2/utils.py", line 577, in call_with_appropriate
+    return fn(**kwargs)
+  File "/workspaces/FinStor/storage/tables.py", line 46, in render_details
+    return mark_safe(f'<a href="{reverse("import_details", args=[value])}" class="btn btn-secondary">عرض</a>')
+                                 ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'import_details' not found. 'import_details' is not a valid view function or pattern name.
+ERROR 2024-12-29 14:10:43,720 basehttp "GET /storage/import/ HTTP/1.1" 500 281183
+INFO 2024-12-29 14:11:01,598 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 14:11:03,396 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 14:11:43,545 autoreload /workspaces/FinStor/storage/urls.py changed, reloading.
+INFO 2024-12-29 14:11:46,641 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 14:12:31,312 basehttp "GET /storage/import/ HTTP/1.1" 200 19985
+ERROR 2024-12-29 14:12:34,457 log Internal Server Error: /transaction/13/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 259, in import_details
+    related_assets = ImportItem.objects.filter(transaction=record)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'transaction' into field. Choices are: asset, asset_id, created_at, deleted_at, id, price, quantity, record, record_id, return_at, return_notes, return_purpose, updated_at
+ERROR 2024-12-29 14:12:34,468 basehttp "GET /transaction/13/ HTTP/1.1" 500 113095
+INFO 2024-12-29 14:13:16,939 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 14:13:19,267 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 14:13:32,843 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 14:13:35,283 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 14:13:37,101 basehttp "GET /storage/import/ HTTP/1.1" 200 19985
+INFO 2024-12-29 14:13:37,188 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 14:13:37,195 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 14:13:37,199 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 14:13:37,202 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 14:13:37,221 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 14:13:37,229 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 14:13:37,229 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 14:13:37,240 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 14:13:37,245 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 14:13:37,290 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 14:13:37,292 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 14:13:37,317 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 14:13:37,373 log Not Found: /favicon.ico
+WARNING 2024-12-29 14:13:37,374 basehttp "GET /favicon.ico HTTP/1.1" 404 6096
+ERROR 2024-12-29 14:13:38,699 log Internal Server Error: /transaction/13/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 259, in import_details
+    related_assets = ImportItem.objects.filter(trans_id=record)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1768, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'trans_id' into field. Choices are: asset, asset_id, created_at, deleted_at, id, price, quantity, record, record_id, return_at, return_notes, return_purpose, updated_at
+ERROR 2024-12-29 14:13:38,712 basehttp "GET /transaction/13/ HTTP/1.1" 500 113029
+INFO 2024-12-29 14:14:45,056 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 14:14:47,505 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-29 14:14:49,298 log Internal Server Error: /transaction/13/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 266, in import_details
+    return render(request, 'import_details.html', context)  # Adjust template path as needed
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'print_transaction' not found. 'print_transaction' is not a valid view function or pattern name.
+ERROR 2024-12-29 14:14:49,315 basehttp "GET /transaction/13/ HTTP/1.1" 500 154726
+WARNING 2024-12-29 14:14:49,463 log Not Found: /favicon.ico
+WARNING 2024-12-29 14:14:49,464 basehttp "GET /favicon.ico HTTP/1.1" 404 6096
+INFO 2024-12-29 14:15:14,636 basehttp "GET /transaction/13/ HTTP/1.1" 200 10155
+INFO 2024-12-29 14:15:14,735 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 304 0
+INFO 2024-12-29 17:34:42,162 basehttp "GET /transaction/2/ HTTP/1.1" 200 10022
+INFO 2024-12-29 17:35:22,566 autoreload /workspaces/FinStor/storage/urls.py changed, reloading.
+INFO 2024-12-29 17:35:25,269 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 17:35:34,940 basehttp "GET /storage/import/ HTTP/1.1" 200 20015
+INFO 2024-12-29 17:35:36,186 basehttp "GET /storage/import/13/ HTTP/1.1" 200 10159
+INFO 2024-12-29 17:40:23,857 basehttp "GET /storage/import/?page=2 HTTP/1.1" 200 15753
+INFO 2024-12-29 17:40:25,037 basehttp "GET /storage/import/?page=1 HTTP/1.1" 200 20081
+INFO 2024-12-29 17:40:39,400 basehttp "GET /storage/import/14/ HTTP/1.1" 200 10159
+INFO 2024-12-29 17:40:45,285 basehttp "GET /storage/import/6/ HTTP/1.1" 200 10158
+INFO 2024-12-29 17:40:48,155 basehttp "GET /storage/import/5/ HTTP/1.1" 200 10026
+INFO 2024-12-29 17:40:49,852 basehttp "GET /storage/import/6/ HTTP/1.1" 200 10158
+INFO 2024-12-29 17:40:51,769 basehttp "GET /storage/import/11/ HTTP/1.1" 200 10093
+INFO 2024-12-29 17:41:34,093 basehttp "GET /storage/import/13/ HTTP/1.1" 200 10159
+INFO 2024-12-29 17:44:07,001 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 17:44:09,335 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 17:44:19,593 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 17:44:21,898 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 17:44:24,325 basehttp "GET /storage/import/13/ HTTP/1.1" 200 10159
+INFO 2024-12-29 17:44:49,671 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 17:44:52,117 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 17:44:53,672 basehttp "GET /storage/import/13/ HTTP/1.1" 200 10159
+INFO 2024-12-29 17:44:55,260 basehttp "GET /storage/import/13/ HTTP/1.1" 200 10159
+INFO 2024-12-29 17:45:09,538 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 17:45:11,583 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 17:52:42,764 basehttp "GET /storage/import/13/ HTTP/1.1" 200 10159
+INFO 2024-12-29 17:53:06,105 basehttp "GET /storage/import/13/ HTTP/1.1" 200 10205
+INFO 2024-12-29 17:56:44,042 basehttp "GET /storage/import/13/ HTTP/1.1" 200 10207
+INFO 2024-12-29 17:56:44,679 basehttp "GET /storage/import/13/ HTTP/1.1" 200 10207
+INFO 2024-12-29 17:57:22,114 autoreload /workspaces/FinStor/storage/models.py changed, reloading.
+INFO 2024-12-29 17:57:24,850 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 17:57:38,336 basehttp "GET /storage/import/13/ HTTP/1.1" 200 10191
+INFO 2024-12-29 17:58:52,557 basehttp "GET /storage/import/13/ HTTP/1.1" 200 10205
+INFO 2024-12-29 18:01:46,145 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 18:01:48,775 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-29 18:02:26,859 log Internal Server Error: /storage/import/13/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 266, in import_details
+    'price': asset.asset.price,  # Assuming Asset model has a `price` field
+             ^^^^^^^^^^^^^^^^^
+AttributeError: 'Asset' object has no attribute 'price'
+ERROR 2024-12-29 18:02:26,869 basehttp "GET /storage/import/13/ HTTP/1.1" 500 65506
+INFO 2024-12-29 18:05:00,510 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 18:05:02,759 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-29 18:05:04,973 log Internal Server Error: /storage/import/13/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 266, in import_details
+    'price': asset.asset.price,  # Assuming Asset model has a `price` field
+             ^^^^^^^^^^^^^^^^^
+AttributeError: 'Asset' object has no attribute 'price'
+ERROR 2024-12-29 18:05:04,981 basehttp "GET /storage/import/13/ HTTP/1.1" 500 65472
+ERROR 2024-12-29 18:05:07,681 log Internal Server Error: /storage/import/2/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 276, in import_details
+    return render(request, 'import_details.html', context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 701, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 611, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'sum'
+ERROR 2024-12-29 18:05:07,692 basehttp "GET /storage/import/2/ HTTP/1.1" 500 183009
+ERROR 2024-12-29 18:05:10,122 log Internal Server Error: /storage/import/4/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 276, in import_details
+    return render(request, 'import_details.html', context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 701, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 611, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'sum'
+ERROR 2024-12-29 18:05:10,131 basehttp "GET /storage/import/4/ HTTP/1.1" 500 183009
+ERROR 2024-12-29 18:05:12,061 log Internal Server Error: /storage/import/6/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 266, in import_details
+    'price': asset.asset.price,  # Assuming Asset model has a `price` field
+             ^^^^^^^^^^^^^^^^^
+AttributeError: 'Asset' object has no attribute 'price'
+ERROR 2024-12-29 18:05:12,065 basehttp "GET /storage/import/6/ HTTP/1.1" 500 65322
+INFO 2024-12-29 18:05:44,833 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 18:05:47,415 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-29 18:05:49,280 log Internal Server Error: /storage/import/6/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 276, in import_details
+    return render(request, 'import_details.html', context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 701, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 611, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'sum'
+ERROR 2024-12-29 18:05:49,294 basehttp "GET /storage/import/6/ HTTP/1.1" 500 185000
+ERROR 2024-12-29 18:05:53,021 log Internal Server Error: /storage/import/6/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 276, in import_details
+    return render(request, 'import_details.html', context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 701, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 611, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'sum'
+ERROR 2024-12-29 18:05:53,037 basehttp "GET /storage/import/6/ HTTP/1.1" 500 184863
+INFO 2024-12-29 18:09:53,326 autoreload /workspaces/FinStor/storage/templatetags/custom_filters.py changed, reloading.
+INFO 2024-12-29 18:09:55,533 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-29 18:09:57,571 log Internal Server Error: /storage/import/6/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 276, in import_details
+    return render(request, 'import_details.html', context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 701, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 611, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'sum_total'
+ERROR 2024-12-29 18:09:57,587 basehttp "GET /storage/import/6/ HTTP/1.1" 500 184951
+ERROR 2024-12-29 18:10:17,428 log Internal Server Error: /storage/import/6/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'request.user|is_in_group:"admins"'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 276, in import_details
+    return render(request, 'import_details.html', context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 701, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 611, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'is_in_group'
+ERROR 2024-12-29 18:10:17,440 basehttp "GET /storage/import/6/ HTTP/1.1" 500 287983
+INFO 2024-12-29 18:11:07,733 autoreload /workspaces/FinStor/core/templatetags/custom_filters.py changed, reloading.
+INFO 2024-12-29 18:11:10,362 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-29 18:11:20,884 log Internal Server Error: /storage/import/6/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'request.user|is_in_group:"admins"'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 276, in import_details
+    return render(request, 'import_details.html', context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 701, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 611, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'is_in_group'
+ERROR 2024-12-29 18:11:20,899 basehttp "GET /storage/import/6/ HTTP/1.1" 500 287983
+ERROR 2024-12-29 18:11:23,607 log Internal Server Error: /storage/import/6/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'request.user|is_in_group:"admins"'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 276, in import_details
+    return render(request, 'import_details.html', context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 701, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 611, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'is_in_group'
+ERROR 2024-12-29 18:11:23,617 basehttp "GET /storage/import/6/ HTTP/1.1" 500 288111
+WARNING 2024-12-29 18:11:23,770 log Not Found: /favicon.ico
+WARNING 2024-12-29 18:11:23,772 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 18:11:34,473 autoreload /workspaces/FinStor/core/templatetags/custom_filters.py changed, reloading.
+INFO 2024-12-29 18:11:36,433 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 18:11:38,626 basehttp "GET /storage/import/6/ HTTP/1.1" 200 10867
+INFO 2024-12-29 18:11:38,689 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,692 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,695 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,695 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,698 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,699 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,700 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,703 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,710 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,729 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,731 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,732 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 304 0
+INFO 2024-12-29 18:11:38,756 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 304 0
+INFO 2024-12-29 18:14:44,829 basehttp "GET /storage/import/6/ HTTP/1.1" 200 11090
+INFO 2024-12-29 18:15:10,040 basehttp "GET /storage/import/6/ HTTP/1.1" 200 11101
+INFO 2024-12-29 18:15:38,065 basehttp "GET /storage/import/6/ HTTP/1.1" 200 11111
+INFO 2024-12-29 18:16:52,074 basehttp "GET /storage/import/6/ HTTP/1.1" 200 11229
+INFO 2024-12-29 18:18:48,496 basehttp "GET /storage/import/6/ HTTP/1.1" 200 11516
+INFO 2024-12-29 18:19:38,502 basehttp "GET /storage/import/6/ HTTP/1.1" 200 11529
+INFO 2024-12-29 18:19:51,397 basehttp "GET /storage/import/6/ HTTP/1.1" 200 11549
+INFO 2024-12-29 18:20:55,790 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 18:20:58,507 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 18:22:08,755 basehttp "GET /storage/import/6/ HTTP/1.1" 200 11660
+INFO 2024-12-29 18:22:58,119 basehttp "GET /storage/import/6/ HTTP/1.1" 200 11660
+INFO 2024-12-29 18:22:58,205 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 18:22:58,213 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 18:22:58,214 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 18:22:58,219 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 18:22:58,232 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 18:22:58,239 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 18:22:58,244 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 18:22:58,248 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 18:22:58,253 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 18:22:58,293 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 18:22:58,295 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 18:22:58,306 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+INFO 2024-12-29 18:22:58,313 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 200 49452
+WARNING 2024-12-29 18:22:58,403 log Not Found: /favicon.ico
+WARNING 2024-12-29 18:22:58,404 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 18:23:33,768 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 18:23:38,850 basehttp "GET /storage/import/ HTTP/1.1" 200 20015
+INFO 2024-12-29 18:23:40,196 basehttp "GET /storage/import/ HTTP/1.1" 200 20015
+INFO 2024-12-29 18:23:40,267 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 18:23:40,273 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 18:23:40,277 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 18:23:40,283 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 18:23:40,297 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 18:23:40,304 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 18:23:40,305 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 18:23:40,314 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 18:23:40,316 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 18:23:40,354 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 18:23:40,355 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 18:23:40,367 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 18:23:40,428 log Not Found: /favicon.ico
+WARNING 2024-12-29 18:23:40,429 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 18:23:43,050 basehttp "GET /storage/import/6/ HTTP/1.1" 200 11660
+INFO 2024-12-29 18:23:43,137 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 200 49452
+INFO 2024-12-29 18:23:46,314 basehttp "GET /storage/import/14/ HTTP/1.1" 200 11662
+INFO 2024-12-29 18:24:11,796 basehttp "GET /storage/import/14/ HTTP/1.1" 200 11662
+INFO 2024-12-29 18:24:23,464 basehttp "GET /storage/import/14/ HTTP/1.1" 200 11662
+INFO 2024-12-29 18:24:23,540 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 18:24:23,548 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 18:24:23,550 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 18:24:23,555 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 18:24:23,573 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 18:24:23,577 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 18:24:23,578 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 18:24:23,584 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 18:24:23,590 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 18:24:23,636 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 18:24:23,636 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 200 49452
+INFO 2024-12-29 18:24:23,639 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 18:24:23,648 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 18:24:23,718 log Not Found: /favicon.ico
+WARNING 2024-12-29 18:24:23,720 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 18:25:08,241 basehttp "GET /storage/import/ HTTP/1.1" 200 20015
+INFO 2024-12-29 18:26:15,004 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13659
+INFO 2024-12-29 18:26:15,128 basehttp "GET /static/css/fields.css HTTP/1.1" 304 0
+INFO 2024-12-29 18:27:52,591 basehttp "GET /storage/import/ HTTP/1.1" 200 20044
+INFO 2024-12-29 18:27:53,923 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13730
+INFO 2024-12-29 18:27:55,850 basehttp "GET /storage/import/new/cancel HTTP/1.1" 302 0
+INFO 2024-12-29 18:27:55,972 basehttp "GET /storage/import/ HTTP/1.1" 200 20044
+INFO 2024-12-29 18:28:19,606 basehttp "GET /storage/import/ HTTP/1.1" 200 20065
+INFO 2024-12-29 18:28:21,733 basehttp "GET /storage/import/ HTTP/1.1" 200 20065
+INFO 2024-12-29 18:28:21,815 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 18:28:21,822 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 18:28:21,822 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 18:28:21,833 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 18:28:21,848 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 18:28:21,850 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 18:28:21,854 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 18:28:21,861 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 18:28:21,867 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 18:28:21,903 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 18:28:21,904 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 18:28:21,917 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 18:28:21,972 log Not Found: /favicon.ico
+WARNING 2024-12-29 18:28:21,973 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 18:28:33,538 basehttp "GET /storage/import/ HTTP/1.1" 200 20054
+INFO 2024-12-29 18:29:01,178 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 200 49452
+INFO 2024-12-29 18:30:37,748 basehttp "GET /storage/import/ HTTP/1.1" 200 20000
+INFO 2024-12-29 18:30:59,157 basehttp "GET /storage/import/ HTTP/1.1" 200 20010
+INFO 2024-12-29 18:31:00,470 basehttp "GET /storage/import/ HTTP/1.1" 200 20010
+INFO 2024-12-29 18:31:00,550 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 18:31:00,552 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 18:31:00,560 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 18:31:00,569 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 18:31:00,583 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 18:31:00,583 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 18:31:00,587 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 18:31:00,596 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 18:31:00,603 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 18:31:00,647 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 18:31:00,648 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 18:31:00,656 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 18:31:00,714 log Not Found: /favicon.ico
+WARNING 2024-12-29 18:31:00,714 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 18:31:15,042 basehttp "GET /storage/import/ HTTP/1.1" 200 20000
+INFO 2024-12-29 18:31:21,930 basehttp "GET /storage/import/ HTTP/1.1" 200 20000
+INFO 2024-12-29 18:31:24,548 basehttp "GET /storage/import/ HTTP/1.1" 200 20000
+INFO 2024-12-29 18:31:24,643 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 18:31:24,644 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 18:31:24,649 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 18:31:24,664 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 18:31:24,682 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 18:31:24,686 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 18:31:24,691 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 18:31:24,700 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 18:31:24,701 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 18:31:24,737 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 18:31:24,737 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 18:31:24,750 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 18:31:24,800 log Not Found: /favicon.ico
+WARNING 2024-12-29 18:31:24,800 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 18:31:33,422 basehttp "GET /storage/import/ HTTP/1.1" 200 20000
+INFO 2024-12-29 18:31:40,307 basehttp "GET /storage/import/ HTTP/1.1" 200 20000
+INFO 2024-12-29 18:31:48,485 basehttp "GET /storage/import/ HTTP/1.1" 200 20000
+INFO 2024-12-29 18:33:03,829 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 18:33:05,167 basehttp "GET /storage/categories/ HTTP/1.1" 200 13976
+INFO 2024-12-29 18:33:05,729 basehttp "GET /storage/assets/ HTTP/1.1" 200 16170
+INFO 2024-12-29 18:33:06,615 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 18:36:40,224 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 18:36:42,480 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 18:36:45,260 basehttp "GET /storage/categories/ HTTP/1.1" 200 13976
+INFO 2024-12-29 18:36:46,344 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 18:36:47,367 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13742
+INFO 2024-12-29 18:36:53,400 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=JFpx8GLoiLYCVwV5oxnuLwvb1W6Opfmct8s3CVxoekzdQtq06HeD9yRabTmgc7gi&asset=2&quantity=1&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+ERROR 2024-12-29 18:36:53,471 log Internal Server Error: /storage/import/new/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 186, in import_create
+    for asset_id, price, quantity in request.session.get('import_items', {}).items():
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+ERROR 2024-12-29 18:36:53,478 basehttp "GET /storage/import/new/ HTTP/1.1" 500 70964
+INFO 2024-12-29 18:46:34,285 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 18:46:36,769 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 18:46:49,007 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 18:46:49,532 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13742
+INFO 2024-12-29 18:46:58,979 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=tCJdJFhI3JfwRB0k55dOXmrW3a28Sdfkd5MJdU3IZiQ7MyvfNf4XloNVd7iAF59q&asset=2&quantity=1&price=7&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+ERROR 2024-12-29 18:46:59,040 log Internal Server Error: /storage/import/new/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 186, in import_create
+    for asset_id, price, quantity in request.session.get('import_items', {}).items():
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+ERROR 2024-12-29 18:46:59,051 basehttp "GET /storage/import/new/ HTTP/1.1" 500 70964
+INFO 2024-12-29 18:47:51,363 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 18:47:53,879 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 18:48:19,909 basehttp "GET /storage/import/14/ HTTP/1.1" 200 11674
+INFO 2024-12-29 18:49:36,828 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 18:49:37,993 basehttp "GET /storage/import/2/ HTTP/1.1" 200 11131
+INFO 2024-12-29 18:49:42,284 basehttp "GET /storage/import/4/ HTTP/1.1" 200 11131
+INFO 2024-12-29 18:49:45,131 basehttp "GET /storage/import/6/ HTTP/1.1" 200 11677
+INFO 2024-12-29 18:51:17,367 basehttp "GET /storage/assets/ HTTP/1.1" 200 16170
+INFO 2024-12-29 18:51:18,970 basehttp "GET /storage/assets/?category=2&id=2 HTTP/1.1" 200 15473
+INFO 2024-12-29 18:51:25,829 basehttp "POST /storage/assets/?category=2&id=2 HTTP/1.1" 302 0
+INFO 2024-12-29 18:51:25,898 basehttp "GET /storage/assets/?category=2 HTTP/1.1" 200 15285
+INFO 2024-12-29 18:51:27,918 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 18:51:30,260 basehttp "GET /storage/import/1/ HTTP/1.1" 200 11674
+INFO 2024-12-29 18:52:18,882 basehttp "GET /storage/assets/ HTTP/1.1" 200 16170
+INFO 2024-12-29 18:52:58,042 basehttp "POST /storage/assets/ HTTP/1.1" 302 0
+INFO 2024-12-29 18:52:58,128 basehttp "GET /storage/assets/?category= HTTP/1.1" 200 16930
+INFO 2024-12-29 18:54:42,267 basehttp "POST /storage/assets/?category= HTTP/1.1" 302 0
+INFO 2024-12-29 18:54:42,401 basehttp "GET /storage/assets/?category= HTTP/1.1" 200 17617
+INFO 2024-12-29 18:54:58,375 basehttp "POST /storage/assets/?category= HTTP/1.1" 302 0
+INFO 2024-12-29 18:54:58,520 basehttp "GET /storage/assets/?category= HTTP/1.1" 200 18299
+INFO 2024-12-29 18:55:11,920 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 18:55:15,768 basehttp "GET /storage/import/14/ HTTP/1.1" 200 11679
+INFO 2024-12-29 18:55:42,661 basehttp "GET /storage/import/1/ HTTP/1.1" 200 11674
+INFO 2024-12-29 18:58:20,988 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 18:58:23,891 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 18:58:29,694 basehttp "GET /storage/categories/ HTTP/1.1" 200 13976
+INFO 2024-12-29 18:58:30,356 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 18:59:40,267 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13908
+INFO 2024-12-29 18:59:43,694 basehttp "GET /manage/company/ HTTP/1.1" 200 14664
+INFO 2024-12-29 19:00:05,347 basehttp "POST /manage/company/ HTTP/1.1" 200 14907
+INFO 2024-12-29 19:00:10,907 basehttp "POST /manage/company/ HTTP/1.1" 200 14908
+INFO 2024-12-29 19:00:19,835 basehttp "POST /manage/company/ HTTP/1.1" 302 0
+INFO 2024-12-29 19:00:19,873 basehttp "GET /manage/company/ HTTP/1.1" 200 15182
+INFO 2024-12-29 19:00:25,625 basehttp "GET /manage/department/ HTTP/1.1" 200 14223
+INFO 2024-12-29 19:00:28,567 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 19:00:33,569 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13955
+INFO 2024-12-29 19:01:15,870 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=af2kxSFSCTWhUYqpv8dvuFPksC0pElbXUI5Q17rSysxSPVVkdi4ESHbjCzgRrd53&asset=5&quantity=1&price=9800.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+ERROR 2024-12-29 19:01:15,986 log Internal Server Error: /storage/import/new/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 182, in import_create
+    for asset_id, price, quantity in request.session.get('import_items', {}).items():
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+ERROR 2024-12-29 19:01:15,996 basehttp "GET /storage/import/new/ HTTP/1.1" 500 70964
+INFO 2024-12-29 19:06:43,466 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 19:06:45,753 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 19:07:13,192 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 19:07:15,604 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 19:07:26,003 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 19:07:28,797 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 19:07:48,400 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 19:07:50,628 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 19:07:56,779 basehttp "GET /storage/categories/ HTTP/1.1" 200 13976
+INFO 2024-12-29 19:07:58,607 basehttp "GET /storage/categories/ HTTP/1.1" 200 13976
+INFO 2024-12-29 19:07:58,695 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:07:58,698 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:07:58,699 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:07:58,712 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:07:58,734 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:07:58,749 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:07:58,752 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:07:58,757 basehttp "GET /storage/categories/ HTTP/1.1" 200 13976
+INFO 2024-12-29 19:07:58,845 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:07:58,854 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:07:58,858 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:07:58,862 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:07:58,886 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:07:58,895 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:07:58,896 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:07:58,911 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:07:58,917 basehttp "GET /storage/categories/ HTTP/1.1" 200 13976
+INFO 2024-12-29 19:07:58,920 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:07:59,017 basehttp "GET /storage/categories/ HTTP/1.1" 200 13976
+INFO 2024-12-29 19:07:59,022 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:07:59,025 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:07:59,026 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:07:59,082 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:07:59,084 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:07:59,087 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:07:59,098 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:07:59,126 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:07:59,126 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:07:59,127 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:07:59,140 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:07:59,142 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:07:59,170 basehttp "GET /storage/categories/ HTTP/1.1" 200 13976
+INFO 2024-12-29 19:07:59,244 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:07:59,244 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:07:59,244 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:07:59,258 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:07:59,274 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:07:59,276 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:07:59,278 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:07:59,287 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:07:59,291 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:07:59,338 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:07:59,342 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:07:59,349 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:07:59,403 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:07:59,404 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:08:00,551 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 19:08:01,750 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 19:08:01,829 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:08:01,835 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:08:01,836 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:08:01,855 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:08:01,878 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:08:01,884 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:08:01,887 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:08:01,893 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:08:01,907 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:08:01,954 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:08:01,955 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:08:01,962 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:08:02,015 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:08:02,016 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:08:05,284 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13955
+INFO 2024-12-29 19:08:30,347 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=zRkxwT4JUGkPLmsHqoz3J9s2rAJ1NTsnjkn308QJQfVqGjXC8yqc7bO1BxZtALmt&asset=5&quantity=1&price=9800&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+ERROR 2024-12-29 19:08:30,415 log Internal Server Error: /storage/import/new/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 182, in import_create
+    for asset_id, quantity, price in request.session.get('import_items', {}).items():
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+ERROR 2024-12-29 19:08:30,425 basehttp "GET /storage/import/new/ HTTP/1.1" 500 70964
+ERROR 2024-12-29 19:10:02,396 log Internal Server Error: /storage/import/new/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 182, in import_create
+    for asset_id, quantity, price in request.session.get('import_items', {}).items():
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+ERROR 2024-12-29 19:10:02,402 basehttp "GET /storage/import/new/ HTTP/1.1" 500 70960
+INFO 2024-12-29 19:10:05,603 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 19:10:06,942 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13955
+INFO 2024-12-29 19:11:58,304 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 19:12:00,689 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 19:12:04,604 basehttp "GET /storage/categories/ HTTP/1.1" 200 13976
+INFO 2024-12-29 19:12:05,355 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+ERROR 2024-12-29 19:12:06,491 log Internal Server Error: /storage/import/new/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 179, in import_create
+    print(import_items = request.session.get('import_items', {}))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: print() got an unexpected keyword argument 'import_items'
+ERROR 2024-12-29 19:12:06,502 basehttp "GET /storage/import/new/ HTTP/1.1" 500 71050
+INFO 2024-12-29 19:12:26,852 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 19:12:28,731 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 19:12:30,342 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13955
+INFO 2024-12-29 19:12:30,690 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13955
+INFO 2024-12-29 19:12:44,761 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=IxOPzISjbowhXuAgW32Pbczy2CJ3ypaqs0Rl3XEj7X7SSr5bEdTYzeVxczZvlh4w&asset=5&quantity=1&price=9800&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+ERROR 2024-12-29 19:12:44,830 log Internal Server Error: /storage/import/new/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 183, in import_create
+    for asset_id, quantity, price in request.session.get('import_items', {}).items():
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+ERROR 2024-12-29 19:12:44,840 basehttp "GET /storage/import/new/ HTTP/1.1" 500 70948
+INFO 2024-12-29 19:14:50,715 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 19:14:52,859 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 19:15:38,215 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14253
+INFO 2024-12-29 19:16:21,659 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14293
+INFO 2024-12-29 19:19:11,193 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:19:12,636 basehttp "GET /storage/import/new/cancel HTTP/1.1" 302 0
+INFO 2024-12-29 19:19:12,768 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 19:19:14,046 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14016
+INFO 2024-12-29 19:19:51,089 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13986
+INFO 2024-12-29 19:20:11,084 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13982
+INFO 2024-12-29 19:20:22,199 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13986
+INFO 2024-12-29 19:25:24,313 autoreload /workspaces/FinStor/storage/forms.py changed, reloading.
+INFO 2024-12-29 19:25:26,349 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-29 19:25:35,605 log Internal Server Error: /storage/import/new/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 195, in import_create
+    return render(request, 'invoice.html', {
+        'import_record_form': import_record_form,
+        'import_item_form': import_item_form,
+        'import_items': import_items,  # Updated import items with names
+    })
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/templatetags/crispy_forms_tags.py", line 199, in render
+    c = self.get_render(context).flatten()
+        ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/templatetags/crispy_forms_tags.py", line 117, in get_render
+    actual_form.form_html = helper.render_layout(
+                            ~~~~~~~~~~~~~~~~~~~~^
+        actual_form, node_context, template_pack=self.template_pack
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/helper.py", line 276, in render_layout
+    html = self.layout.render(form, context, template_pack=template_pack)
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/layout.py", line 142, in render
+    return self.get_rendered_fields(form, context, template_pack, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/layout.py", line 105, in get_rendered_fields
+    "".join(render_field(field, form, context, template_pack=template_pack, **kwargs) for field in self.fields)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/layout.py", line 105, in <genexpr>
+    "".join(render_field(field, form, context, template_pack=template_pack, **kwargs) for field in self.fields)
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/utils.py", line 65, in render_field
+    return field.render(form, context, template_pack=template_pack)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/bootstrap.py", line 307, in render
+    html = self.get_rendered_fields(form, context, template_pack, **kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/layout.py", line 105, in get_rendered_fields
+    "".join(render_field(field, form, context, template_pack=template_pack, **kwargs) for field in self.fields)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/layout.py", line 105, in <genexpr>
+    "".join(render_field(field, form, context, template_pack=template_pack, **kwargs) for field in self.fields)
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/utils.py", line 65, in render_field
+    return field.render(form, context, template_pack=template_pack)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/crispy_forms/layout.py", line 875, in render
+    return Template(str(self.html)).render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'storage/import/new/cancel' not found. 'storage/import/new/cancel' is not a valid view function or pattern name.
+ERROR 2024-12-29 19:25:35,625 basehttp "GET /storage/import/new/ HTTP/1.1" 500 315172
+INFO 2024-12-29 19:25:58,323 autoreload /workspaces/FinStor/storage/forms.py changed, reloading.
+INFO 2024-12-29 19:26:00,849 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 19:26:02,299 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13987
+INFO 2024-12-29 19:26:08,162 basehttp "GET /storage/import/new/cancel HTTP/1.1" 302 0
+INFO 2024-12-29 19:26:08,298 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 19:26:09,992 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13987
+INFO 2024-12-29 19:26:16,904 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=EHktQuYddZVlg7PYcMxvHXKOwhTKXpi2oanZkJKd9ywWb4kTUWoE5Z6NGe9cKhc8&asset=5&quantity=2&price=9800&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 19:26:17,023 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14285
+INFO 2024-12-29 19:26:18,452 basehttp "GET /storage/import/new/cancel HTTP/1.1" 302 0
+INFO 2024-12-29 19:26:18,639 basehttp "GET /storage/import/ HTTP/1.1" 200 20012
+INFO 2024-12-29 19:26:19,495 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13987
+INFO 2024-12-29 19:27:09,748 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=awoPT8nMy1iBm0f9u2Sf6vjg1DhPwqN9UZrlnn9MuATchXK4ccJouxFfbAxhjiHf&asset=5&quantity=2&price=9800&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 19:27:09,871 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14285
+ERROR 2024-12-29 19:27:26,727 log Internal Server Error: /storage/import/new/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 154, in import_create
+    for asset_id, quantity, price in items.items():
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+ERROR 2024-12-29 19:27:26,736 basehttp "POST /storage/import/new/ HTTP/1.1" 500 72819
+INFO 2024-12-29 19:31:12,682 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 19:31:14,976 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 19:31:47,119 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 19:31:49,678 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-29 19:31:53,316 log Internal Server Error: /storage/import/new/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 164, in import_create
+    if import_items:
+       ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'import_items' where it is not associated with a value
+ERROR 2024-12-29 19:31:53,324 basehttp "POST /storage/import/new/ HTTP/1.1" 500 72987
+INFO 2024-12-29 19:32:58,005 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 19:33:00,203 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 19:33:03,483 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-29 19:33:03,671 basehttp "GET /storage/import/ HTTP/1.1" 200 20011
+INFO 2024-12-29 19:36:08,349 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13987
+INFO 2024-12-29 19:36:54,994 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13994
+INFO 2024-12-29 19:37:04,286 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13994
+INFO 2024-12-29 19:37:13,773 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13994
+INFO 2024-12-29 19:37:44,118 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13930
+INFO 2024-12-29 19:37:52,024 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13930
+INFO 2024-12-29 19:37:57,134 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13930
+INFO 2024-12-29 19:38:06,067 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13935
+INFO 2024-12-29 19:38:17,212 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13935
+INFO 2024-12-29 19:38:22,145 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13935
+INFO 2024-12-29 19:38:28,795 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13940
+INFO 2024-12-29 19:38:35,124 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13940
+INFO 2024-12-29 19:38:35,519 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13940
+INFO 2024-12-29 19:38:35,695 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13940
+INFO 2024-12-29 19:38:36,024 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13940
+INFO 2024-12-29 19:38:41,302 basehttp "GET /storage/import/new/ HTTP/1.1" 200 13940
+INFO 2024-12-29 19:46:41,332 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14296
+INFO 2024-12-29 19:47:27,814 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14296
+INFO 2024-12-29 19:47:27,915 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:47:27,920 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:47:27,925 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:47:27,926 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:47:27,947 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:47:27,950 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:47:27,951 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:47:27,963 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:47:27,966 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:47:28,005 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:47:28,008 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:47:28,019 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:47:28,070 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:47:28,071 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:47:38,591 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:47:38,669 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:47:38,675 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:47:38,676 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:47:38,683 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:47:38,706 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:47:38,707 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:47:38,709 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:47:38,722 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:47:38,731 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:47:38,765 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:47:38,837 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:47:38,842 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:47:38,847 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:47:38,857 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:47:38,871 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:47:38,875 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:47:38,878 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:47:38,891 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:47:38,894 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:47:38,936 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:47:39,013 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:47:39,017 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:47:39,019 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:47:39,025 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:47:39,043 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:47:39,044 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:47:39,045 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:47:39,058 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:47:39,069 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:47:39,110 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:47:39,184 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:47:39,190 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:47:39,191 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:47:39,202 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:47:39,216 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:47:39,220 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:47:39,220 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:47:39,233 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:47:39,237 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:47:39,283 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:47:39,361 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:47:39,363 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:47:39,366 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:47:39,375 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:47:39,395 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:47:39,397 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:47:39,399 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:47:39,405 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:47:39,408 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:47:39,443 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:47:39,443 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:47:39,454 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:47:39,504 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:47:39,504 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:53:01,347 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:01,430 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:01,436 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:01,443 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:01,450 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:01,467 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:01,472 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:01,474 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:01,488 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:01,492 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:01,534 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:01,618 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:01,623 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:01,626 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:01,640 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:01,657 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:01,664 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:01,676 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:01,680 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:01,686 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:01,711 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:01,809 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:01,810 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:01,810 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:01,822 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:01,862 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:01,863 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:01,864 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:01,866 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:01,894 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:01,904 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:02,007 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:02,009 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:02,016 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:02,043 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:02,051 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:02,059 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:02,070 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:02,119 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:02,123 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:02,126 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:02,132 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:02,169 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:02,171 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:02,171 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:02,177 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:02,183 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:02,213 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:02,309 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:02,310 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:02,321 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:02,331 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:02,362 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:02,364 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:02,366 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:02,375 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:02,387 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:02,397 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:02,470 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:02,478 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:02,478 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:02,486 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:02,500 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:02,507 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:02,508 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:02,514 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:02,514 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:02,566 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:53:02,568 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:53:02,586 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+INFO 2024-12-29 19:53:02,613 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:02,690 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:02,698 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:02,699 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:02,704 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:02,719 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:02,726 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:02,726 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:02,732 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:02,736 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:02,773 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:53:02,774 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:53:02,785 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:53:02,837 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:53:02,837 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:53:13,952 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:14,007 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:14,085 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:14,092 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:14,098 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:14,103 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:14,122 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:14,129 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:14,131 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:14,141 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:14,146 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:14,182 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:14,257 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:14,266 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:14,267 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:14,277 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:14,298 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:14,303 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:14,310 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:14,321 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:14,329 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:14,350 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:14,418 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:14,420 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:14,427 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:14,435 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:14,453 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:14,461 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:14,473 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:14,489 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:14,490 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:14,498 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14314
+INFO 2024-12-29 19:53:14,587 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:14,587 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:14,594 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:14,601 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:14,620 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:14,625 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:14,625 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:14,637 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:14,640 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:14,681 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:53:14,685 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:53:14,693 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:53:14,748 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:53:14,749 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:53:20,433 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14332
+INFO 2024-12-29 19:53:20,519 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:20,525 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:20,530 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:20,531 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:20,561 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:20,566 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:20,570 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:20,574 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:20,592 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:20,617 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14332
+INFO 2024-12-29 19:53:20,711 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:20,720 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:20,720 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:20,739 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:20,773 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14332
+INFO 2024-12-29 19:53:20,777 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:20,787 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:20,862 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:20,868 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:20,869 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:20,881 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:20,903 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:20,911 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:20,915 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:20,915 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:20,925 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:20,946 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14332
+INFO 2024-12-29 19:53:21,029 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:21,030 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:21,033 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:21,058 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:21,075 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14332
+INFO 2024-12-29 19:53:21,077 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:21,086 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:21,096 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:21,154 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:21,160 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:21,161 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:21,166 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:21,193 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:21,202 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:21,206 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:21,209 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:21,218 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:21,248 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14332
+INFO 2024-12-29 19:53:21,320 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:21,323 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:21,328 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:21,337 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:21,354 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:21,354 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:21,355 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:21,361 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:21,366 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:21,415 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:53:21,423 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:53:21,432 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:53:21,481 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:53:21,482 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:53:49,318 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14307
+INFO 2024-12-29 19:53:49,447 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14307
+INFO 2024-12-29 19:53:49,627 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14307
+INFO 2024-12-29 19:53:50,704 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14307
+INFO 2024-12-29 19:53:50,787 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:53:50,793 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:53:50,794 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:53:50,805 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:53:50,822 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:53:50,824 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:53:50,827 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:53:50,836 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:53:50,841 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:53:50,885 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:53:50,886 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:53:50,895 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:53:50,948 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:53:50,948 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:54:05,285 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14334
+INFO 2024-12-29 19:54:05,420 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14334
+INFO 2024-12-29 19:54:05,547 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14334
+INFO 2024-12-29 19:54:06,826 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14334
+INFO 2024-12-29 19:54:06,909 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:54:06,914 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:54:06,915 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:54:06,927 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:54:06,945 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:54:06,949 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:54:06,954 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:54:06,964 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:54:06,968 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:54:07,012 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14334
+INFO 2024-12-29 19:54:07,099 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:54:07,103 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:54:07,105 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:54:07,115 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:54:07,137 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:54:07,139 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:54:07,141 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:54:07,154 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:54:07,154 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:54:07,197 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14334
+INFO 2024-12-29 19:54:07,287 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:54:07,294 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:54:07,295 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:54:07,304 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:54:07,328 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:54:07,337 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:54:07,341 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:54:07,346 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:54:07,352 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:54:07,401 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:54:07,404 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:54:07,412 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:54:07,471 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:54:07,471 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:57:36,747 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14301
+INFO 2024-12-29 19:57:53,090 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14301
+INFO 2024-12-29 19:57:55,025 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14301
+INFO 2024-12-29 19:57:55,112 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:57:55,119 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:57:55,121 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:57:55,126 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:57:55,143 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:57:55,147 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:57:55,148 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:57:55,153 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:57:55,158 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:57:55,193 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:57:55,194 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:57:55,207 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:57:55,255 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:57:55,256 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:57:55,455 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14301
+INFO 2024-12-29 19:57:55,544 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:57:55,551 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:57:55,555 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:57:55,565 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:57:55,578 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:57:55,586 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:57:55,591 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:57:55,600 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:57:55,603 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:57:55,637 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:57:55,638 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:57:55,646 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:57:55,695 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:57:55,696 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:58:06,017 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14301
+INFO 2024-12-29 19:58:06,109 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:58:06,115 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:58:06,117 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:58:06,126 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:58:06,143 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:58:06,147 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:58:06,153 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:58:06,157 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:58:06,161 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:58:06,199 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:58:06,199 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:58:06,213 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:58:06,268 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:58:06,268 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:58:13,375 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14301
+INFO 2024-12-29 19:58:13,525 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14301
+INFO 2024-12-29 19:58:37,597 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14300
+INFO 2024-12-29 19:58:39,080 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14300
+INFO 2024-12-29 19:58:39,148 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:58:39,153 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:58:39,155 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:58:39,169 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:58:39,184 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:58:39,188 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:58:39,189 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:58:39,198 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:58:39,204 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:58:39,242 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:58:39,248 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:58:39,254 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:58:39,306 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:58:39,307 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 19:58:49,974 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14295
+INFO 2024-12-29 19:58:50,074 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:58:50,081 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:58:50,089 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:58:50,091 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:58:50,119 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:58:50,132 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:58:50,137 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:58:50,145 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:58:50,160 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:58:50,222 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14295
+INFO 2024-12-29 19:58:50,346 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:58:50,367 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:58:50,367 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:58:50,390 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:58:50,432 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:58:50,454 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:58:50,456 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14295
+INFO 2024-12-29 19:58:50,462 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:58:50,559 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 19:58:50,569 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 19:58:50,572 basehttp "GET /static/css/style.css HTTP/1.1" 200 7868
+INFO 2024-12-29 19:58:50,579 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 19:58:50,599 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 19:58:50,606 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 19:58:50,609 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 19:58:50,620 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 19:58:50,626 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 19:58:50,687 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 19:58:50,691 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 19:58:50,707 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 19:58:50,773 log Not Found: /favicon.ico
+WARNING 2024-12-29 19:58:50,774 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 20:00:10,921 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14294
+INFO 2024-12-29 20:01:29,753 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14298
+INFO 2024-12-29 20:01:29,877 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-29 20:01:29,878 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 20:01:29,881 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 20:01:29,883 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 20:01:29,915 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 20:01:29,919 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 20:01:29,919 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 20:01:29,924 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 20:01:29,926 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 20:01:29,965 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 20:01:29,966 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 200 49452
+INFO 2024-12-29 20:01:29,966 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 20:01:29,981 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 20:01:30,226 log Not Found: /favicon.ico
+WARNING 2024-12-29 20:01:30,227 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 20:03:44,453 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:03:44,574 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:03:46,154 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15424
+INFO 2024-12-29 20:03:47,327 basehttp "GET /manage/employee/ HTTP/1.1" 200 16210
+INFO 2024-12-29 20:03:49,468 basehttp "GET /manage/company/ HTTP/1.1" 200 15196
+INFO 2024-12-29 20:03:53,152 basehttp "GET /manage/employee/ HTTP/1.1" 200 16210
+INFO 2024-12-29 20:03:53,672 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15424
+INFO 2024-12-29 20:03:54,498 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:03:57,330 basehttp "GET /storage/categories/ HTTP/1.1" 200 13990
+INFO 2024-12-29 20:03:58,465 basehttp "GET /storage/assets/ HTTP/1.1" 200 18229
+INFO 2024-12-29 20:04:24,916 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:04:24,983 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:04:26,710 basehttp "GET /storage/categories/ HTTP/1.1" 200 13990
+INFO 2024-12-29 20:04:31,790 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:04:33,677 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15424
+INFO 2024-12-29 20:04:37,870 basehttp "GET /manage/employee/ HTTP/1.1" 200 16210
+INFO 2024-12-29 20:04:39,048 basehttp "GET /manage/company/ HTTP/1.1" 200 15196
+INFO 2024-12-29 20:04:43,319 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:04:47,092 basehttp "GET /storage/assets/?category=1 HTTP/1.1" 200 15984
+INFO 2024-12-29 20:04:47,186 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:04:47,846 basehttp "GET /storage/assets/?category=2 HTTP/1.1" 200 15302
+INFO 2024-12-29 20:04:48,392 basehttp "GET /storage/assets/?category=3 HTTP/1.1" 200 16004
+INFO 2024-12-29 20:04:48,855 basehttp "GET /storage/assets/?category=4 HTTP/1.1" 200 14673
+INFO 2024-12-29 20:04:49,940 basehttp "GET /storage/assets/?category=1 HTTP/1.1" 200 15984
+INFO 2024-12-29 20:04:50,611 basehttp "GET /storage/assets/? HTTP/1.1" 200 18232
+INFO 2024-12-29 20:04:52,266 basehttp "GET /storage/assets/?category=1 HTTP/1.1" 200 15984
+INFO 2024-12-29 20:04:53,359 basehttp "GET /storage/assets/? HTTP/1.1" 200 18232
+INFO 2024-12-29 20:04:56,160 basehttp "GET /storage/categories/ HTTP/1.1" 200 13990
+INFO 2024-12-29 20:05:00,441 basehttp "GET /storage/categories/1/ HTTP/1.1" 200 14094
+INFO 2024-12-29 20:05:04,926 basehttp "GET /storage/categories/2/ HTTP/1.1" 200 14102
+INFO 2024-12-29 20:05:09,928 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:05:10,030 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:05:14,964 basehttp "GET /storage/categories/ HTTP/1.1" 200 13990
+INFO 2024-12-29 20:05:16,650 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:05:17,845 basehttp "GET /storage/categories/ HTTP/1.1" 200 13990
+INFO 2024-12-29 20:05:18,954 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:05:39,063 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:05:39,148 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:05:40,206 basehttp "GET /storage/categories/ HTTP/1.1" 200 13990
+INFO 2024-12-29 20:05:41,376 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:05:44,351 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:05:47,532 basehttp "GET /storage/categories/ HTTP/1.1" 200 13990
+INFO 2024-12-29 20:06:11,615 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:06:11,727 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:07:04,719 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:07:04,757 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:07:06,090 basehttp "GET /storage/categories/ HTTP/1.1" 200 14014
+INFO 2024-12-29 20:07:07,874 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:07:16,523 basehttp "GET /storage/categories/ HTTP/1.1" 200 14014
+INFO 2024-12-29 20:07:19,756 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:07:23,152 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:07:24,680 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15424
+INFO 2024-12-29 20:07:25,666 basehttp "GET /manage/employee/ HTTP/1.1" 200 16210
+INFO 2024-12-29 20:07:26,783 basehttp "GET /manage/company/ HTTP/1.1" 200 15196
+INFO 2024-12-29 20:07:29,559 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:07:31,302 basehttp "GET /storage/categories/ HTTP/1.1" 200 14014
+INFO 2024-12-29 20:07:39,729 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 20:08:42,322 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:08:42,443 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:08:43,265 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15424
+INFO 2024-12-29 20:08:44,430 basehttp "GET /manage/affiliate/subs/1/ HTTP/1.1" 200 14318
+INFO 2024-12-29 20:08:46,246 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15424
+INFO 2024-12-29 20:08:47,893 basehttp "GET /manage/affiliate/?id=1 HTTP/1.1" 200 15625
+INFO 2024-12-29 20:08:48,878 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15424
+INFO 2024-12-29 20:08:49,804 basehttp "GET /manage/employee/ HTTP/1.1" 200 16210
+INFO 2024-12-29 20:08:52,095 basehttp "GET /manage/company/ HTTP/1.1" 200 15196
+INFO 2024-12-29 20:08:53,424 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:08:54,359 basehttp "POST /manage/department/ HTTP/1.1" 200 14499
+INFO 2024-12-29 20:08:55,684 basehttp "GET /manage/employee/ HTTP/1.1" 200 16210
+INFO 2024-12-29 20:08:56,532 basehttp "POST /manage/employee/ HTTP/1.1" 200 17027
+INFO 2024-12-29 20:08:58,457 basehttp "GET /manage/company/ HTTP/1.1" 200 15196
+INFO 2024-12-29 20:08:59,339 basehttp "POST /manage/company/ HTTP/1.1" 200 15501
+INFO 2024-12-29 20:09:01,539 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15424
+INFO 2024-12-29 20:09:03,292 basehttp "GET /manage/employee/ HTTP/1.1" 200 16210
+INFO 2024-12-29 20:09:04,055 basehttp "POST /manage/employee/ HTTP/1.1" 200 17027
+INFO 2024-12-29 20:09:08,785 basehttp "GET /manage/company/ HTTP/1.1" 200 15196
+INFO 2024-12-29 20:09:09,779 basehttp "POST /manage/company/ HTTP/1.1" 200 15501
+INFO 2024-12-29 20:09:14,187 basehttp "GET /manage/employee/ HTTP/1.1" 200 16210
+INFO 2024-12-29 20:09:16,147 basehttp "POST /manage/employee/ HTTP/1.1" 200 17027
+INFO 2024-12-29 20:09:19,623 basehttp "GET /manage/company/ HTTP/1.1" 200 15196
+INFO 2024-12-29 20:09:20,837 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15424
+INFO 2024-12-29 20:09:21,786 basehttp "POST /manage/affiliate/ HTTP/1.1" 200 15686
+INFO 2024-12-29 20:09:23,328 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:09:24,526 basehttp "POST /manage/department/ HTTP/1.1" 200 14499
+INFO 2024-12-29 20:09:33,225 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15424
+INFO 2024-12-29 20:09:33,328 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:09:39,736 basehttp "GET /manage/employee/ HTTP/1.1" 200 16210
+INFO 2024-12-29 20:09:40,866 basehttp "GET /manage/company/ HTTP/1.1" 200 15196
+INFO 2024-12-29 20:09:47,558 basehttp "GET /storage/import/ HTTP/1.1" 200 20025
+INFO 2024-12-29 20:09:49,073 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 20:09:50,333 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:09:55,097 basehttp "GET /storage/import/ HTTP/1.1" 200 20025
+INFO 2024-12-29 20:10:20,419 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15424
+INFO 2024-12-29 20:10:22,124 basehttp "GET /manage/employee/ HTTP/1.1" 200 16210
+INFO 2024-12-29 20:10:22,856 basehttp "GET /manage/company/ HTTP/1.1" 200 15196
+INFO 2024-12-29 20:10:24,916 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:10:24,989 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:10:30,591 basehttp "GET /storage/import/ HTTP/1.1" 200 20025
+INFO 2024-12-29 20:13:28,225 autoreload /workspaces/FinStor/storage/models.py changed, reloading.
+INFO 2024-12-29 20:13:31,080 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 20:13:32,738 basehttp "GET /storage/import/ HTTP/1.1" 200 20078
+INFO 2024-12-29 20:13:32,830 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:13:43,850 autoreload /workspaces/FinStor/storage/models.py changed, reloading.
+INFO 2024-12-29 20:13:46,183 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 20:13:47,937 basehttp "GET /storage/import/ HTTP/1.1" 200 20087
+INFO 2024-12-29 20:14:17,384 autoreload /workspaces/FinStor/storage/tables.py changed, reloading.
+INFO 2024-12-29 20:14:19,528 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 20:14:20,842 basehttp "GET /storage/import/ HTTP/1.1" 200 20077
+INFO 2024-12-29 20:14:45,605 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14351
+INFO 2024-12-29 20:14:55,889 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 20:14:55,978 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:14:57,340 basehttp "GET /storage/import/ HTTP/1.1" 200 20077
+INFO 2024-12-29 20:14:59,098 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14351
+INFO 2024-12-29 20:15:00,437 basehttp "GET /storage/import/new/cancel HTTP/1.1" 302 0
+INFO 2024-12-29 20:15:00,584 basehttp "GET /storage/import/ HTTP/1.1" 200 20077
+INFO 2024-12-29 20:15:01,390 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 20:15:02,738 basehttp "GET /storage/import/ HTTP/1.1" 200 20077
+INFO 2024-12-29 20:15:03,813 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 20:15:08,738 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:15:13,497 basehttp "GET /storage/import/ HTTP/1.1" 200 20077
+INFO 2024-12-29 20:15:20,324 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14351
+INFO 2024-12-29 20:16:11,992 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14339
+INFO 2024-12-29 20:17:14,122 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 20:17:14,235 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:17:14,659 basehttp "GET /storage/import/ HTTP/1.1" 200 20077
+INFO 2024-12-29 20:17:18,268 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:17:43,619 autoreload /workspaces/FinStor/core/tables.py changed, reloading.
+INFO 2024-12-29 20:17:45,800 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 20:17:47,089 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:17:49,159 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:17:50,209 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15419
+INFO 2024-12-29 20:17:51,430 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-29 20:17:52,012 basehttp "GET /manage/department/ HTTP/1.1" 200 14237
+INFO 2024-12-29 20:17:52,969 basehttp "GET /manage/company/ HTTP/1.1" 200 15191
+INFO 2024-12-29 20:18:00,771 autoreload /workspaces/FinStor/core/tables.py changed, reloading.
+INFO 2024-12-29 20:18:02,951 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 20:18:05,791 basehttp "GET /manage/company/ HTTP/1.1" 200 15191
+INFO 2024-12-29 20:18:06,633 basehttp "GET /manage/department/ HTTP/1.1" 200 14232
+INFO 2024-12-29 20:18:07,555 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15419
+INFO 2024-12-29 20:18:08,902 basehttp "GET /manage/affiliate/subs/1/ HTTP/1.1" 200 14313
+INFO 2024-12-29 20:18:10,436 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15419
+INFO 2024-12-29 20:18:11,211 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-29 20:18:11,716 basehttp "GET /manage/company/ HTTP/1.1" 200 15191
+INFO 2024-12-29 20:18:12,762 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-29 20:18:13,997 basehttp "GET /manage/company/ HTTP/1.1" 200 15191
+INFO 2024-12-29 20:18:14,692 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-29 20:18:15,082 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15419
+INFO 2024-12-29 20:18:15,447 basehttp "GET /manage/department/ HTTP/1.1" 200 14232
+INFO 2024-12-29 20:18:17,088 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 20:18:17,790 basehttp "GET /storage/import/ HTTP/1.1" 200 20077
+INFO 2024-12-29 20:18:18,312 basehttp "GET /storage/assets/ HTTP/1.1" 200 18232
+INFO 2024-12-29 20:18:19,076 basehttp "GET /storage/import/ HTTP/1.1" 200 20077
+INFO 2024-12-29 20:49:01,295 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14339
+INFO 2024-12-29 20:49:01,440 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 20:49:44,109 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14339
+INFO 2024-12-29 20:49:56,787 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14339
+INFO 2024-12-29 20:49:57,447 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14339
+INFO 2024-12-29 20:49:59,503 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14339
+INFO 2024-12-29 20:49:59,617 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 20:49:59,624 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 20:49:59,625 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-29 20:49:59,634 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 20:49:59,667 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 20:49:59,673 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 20:49:59,673 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 20:49:59,694 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 20:49:59,697 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 20:49:59,701 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 20:49:59,709 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 200 49452
+INFO 2024-12-29 20:49:59,713 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 20:49:59,736 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 20:50:00,009 log Not Found: /favicon.ico
+WARNING 2024-12-29 20:50:00,012 basehttp "GET /favicon.ico HTTP/1.1" 404 6099
+INFO 2024-12-29 20:50:08,071 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14339
+INFO 2024-12-29 20:50:23,323 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14339
+INFO 2024-12-29 20:50:24,128 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14339
+INFO 2024-12-29 20:51:01,531 autoreload /workspaces/FinStor/storage/forms.py changed, reloading.
+INFO 2024-12-29 20:51:04,728 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 20:51:06,894 basehttp "GET /storage/import/new/ HTTP/1.1" 200 14339
+INFO 2024-12-29 21:16:13,162 autoreload /workspaces/FinStor/storage/forms.py changed, reloading.
+INFO 2024-12-29 21:16:16,232 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 21:16:42,257 autoreload /workspaces/FinStor/storage/models.py changed, reloading.
+INFO 2024-12-29 21:16:44,872 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 21:25:04,441 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 21:25:07,048 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 21:25:27,726 autoreload /workspaces/FinStor/storage/urls.py changed, reloading.
+INFO 2024-12-29 21:25:30,162 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 21:25:33,281 autoreload /workspaces/FinStor/storage/urls.py changed, reloading.
+INFO 2024-12-29 21:25:35,115 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 21:25:44,315 basehttp "GET /storage/import/new/ HTTP/1.1" 200 15777
+INFO 2024-12-29 21:25:44,389 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 21:29:16,531 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 21:29:20,241 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 21:29:21,734 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 21:29:21,841 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 21:29:21,849 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 21:29:21,850 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-29 21:29:21,862 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 21:29:21,885 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 21:29:21,887 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 21:29:21,891 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 21:29:21,911 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 21:29:21,917 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 21:29:21,930 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 21:29:21,935 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 21:29:21,937 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 200 49452
+INFO 2024-12-29 21:29:21,965 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+INFO 2024-12-29 21:29:21,975 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 21:29:22,088 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 21:29:22,095 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-29 21:29:22,099 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 21:29:22,117 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 21:29:22,143 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 21:29:22,155 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 21:29:22,158 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 21:29:22,175 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 21:29:22,183 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 21:29:22,184 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 21:29:22,311 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 21:29:22,350 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 21:29:22,355 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 21:29:22,360 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-29 21:29:22,374 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 21:29:22,400 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 21:29:22,400 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 21:29:22,407 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 21:29:22,425 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 21:29:22,433 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 21:29:22,434 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 21:29:22,552 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 21:29:22,559 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 21:29:22,563 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-29 21:29:22,572 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 21:29:22,605 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 21:29:22,608 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 21:29:22,609 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 21:29:22,627 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 21:29:22,633 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 21:29:22,637 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 21:29:22,648 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 200 49452
+INFO 2024-12-29 21:29:22,655 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 21:29:22,672 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 21:29:22,857 log Not Found: /favicon.ico
+WARNING 2024-12-29 21:29:22,857 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-29 21:29:23,837 basehttp "GET /storage/import/ HTTP/1.1" 200 20077
+INFO 2024-12-29 21:29:25,636 basehttp "GET /storage/import/ HTTP/1.1" 200 20077
+INFO 2024-12-29 21:29:25,738 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 21:29:25,751 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-29 21:29:25,755 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 21:29:25,768 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 21:29:25,790 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 21:29:25,792 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 21:29:25,793 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 21:29:25,806 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 21:29:25,820 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 21:29:25,837 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 200 49452
+INFO 2024-12-29 21:29:25,838 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 21:29:25,843 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 21:29:25,849 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 21:29:26,058 log Not Found: /favicon.ico
+WARNING 2024-12-29 21:29:26,059 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-29 21:29:27,021 basehttp "GET /storage/import/new/ HTTP/1.1" 200 15772
+INFO 2024-12-29 21:29:30,649 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-29 21:29:33,638 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-29 21:29:35,497 basehttp "GET /get_assets/3/ HTTP/1.1" 200 231
+INFO 2024-12-29 21:29:38,319 basehttp "GET /get_assets/4/ HTTP/1.1" 200 14
+INFO 2024-12-29 21:29:45,080 basehttp "GET /get_assets/3/ HTTP/1.1" 200 231
+INFO 2024-12-29 21:30:02,341 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=NLkZsKMouicJO75TKlAhmLuKNSqTV29lxenvWZyoqRNkJ4AOsvrqKNQJXPGlIU3r&asset_cat=3&asset=4&quantity=1&price=17&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 21:30:02,417 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16145
+INFO 2024-12-29 21:30:07,659 basehttp "GET /get_assets/3/ HTTP/1.1" 200 231
+INFO 2024-12-29 21:30:11,220 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-29 21:30:18,324 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=1Cm4TcEWKBEKhDOOjOg9K3rOKA7SGSUSL5pAnrqWGaflcAjJ1Y7i85NNUxnktKOY&asset_cat=1&asset=1&quantity=1&price=1000000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 21:30:18,403 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16510
+INFO 2024-12-29 21:30:20,196 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-29 21:30:26,151 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=4gbQhJIqpumJxnONAY8xcnBZnvjAIy5uOJemLYuql3XkskjIi8ZGApXYxsz2vqZA&asset_cat=1&asset=3&quantity=1&price=300000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 21:30:26,237 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16875
+INFO 2024-12-29 21:30:53,984 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-29 21:30:54,149 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 21:31:00,449 basehttp "GET /storage/import/18/ HTTP/1.1" 200 12020
+INFO 2024-12-29 21:32:21,814 basehttp "GET /storage/import/?sort=date HTTP/1.1" 200 20082
+INFO 2024-12-29 21:32:22,889 basehttp "GET /storage/import/?sort=-date HTTP/1.1" 200 20197
+INFO 2024-12-29 21:32:26,435 basehttp "GET /manage/department/ HTTP/1.1" 200 14232
+INFO 2024-12-29 21:32:36,044 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 21:32:38,015 basehttp "GET /storage/import/new/ HTTP/1.1" 200 15772
+INFO 2024-12-29 21:32:42,391 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-29 21:32:44,181 basehttp "GET /get_assets/3/ HTTP/1.1" 200 231
+INFO 2024-12-29 21:33:50,513 basehttp "GET /storage/import/new/cancel HTTP/1.1" 302 0
+INFO 2024-12-29 21:33:50,646 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 21:33:56,611 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 21:45:04,231 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 21:45:06,863 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 21:45:14,173 basehttp "GET /storage/import/new/ HTTP/1.1" 200 15772
+INFO 2024-12-29 21:45:14,323 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 21:45:24,433 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-29 21:45:43,651 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=mcNFVn4jCTKkRd3Qv6SQenQH9BCEjHbs6FQbpCQjyslVMayLdgJZCpcGjyS66z5y&asset_cat=1&asset=1&quantity=1&price=700000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 21:45:43,724 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16136

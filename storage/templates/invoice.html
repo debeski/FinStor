@@ -4,17 +4,65 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/fields.css' %}">
-
-    <h2>Create Import Record</h2>
-
+    <!-- Title -->
+<div class="m-2">
+    <h2>اذن استلام جديد</h2>
+</div>
  <!-- Main transaction form -->
+<div class="container m-2">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-5">
+            <!-- Add Item Form Fields -->
+            <form id="item-form" method="GET" action="{% url 'import_item_add' %}">
+                {% crispy import_item_form %}
+            </form>
+        </div>
+        <div class="col-md-7">
+        <!-- Add Record Form Fields -->
+        <form id="import-form" method="POST" action="{% url 'import_create' %}">
+            {% crispy import_record_form %}
+        </form>
+        </div>
+    </div>
+    <div class="row">
+<!-- Section to Display Added Items -->
+        <div id="added-items">
+            <table class="table mt-3" id="items-table">
+                <thead>
+                    <tr>
+                        <th>الصنف</th>
+                        <th>الكمية</th>
+                        <th>السعر</th>
+                        <th>*</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in import_items %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.price }}</td>
+                            <td>
+                                <a href="{% url 'import_item_delete' item.id %}">Remove</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+{% comment %} 
+    <!-- Add Record Form Fields -->
 <form id="import-form" method="POST" action="{% url 'import_create' %}">
     {% csrf_token %}
 
     <div id="add-record-fields">
         {% crispy import_record_form %}
-        {% comment %} <button type="submit" name="submit_record" class="btn btn-primary">Save Import Record</button> {% endcomment %}
     </div>
 
 </form>
@@ -22,26 +70,18 @@
 <form id="item-form" method="GET" action="{% url 'import_item_add' %}">
     <div id="add-item-fields">
         {% crispy import_item_form %}
-        {% comment %} <button type="submit" class="btn btn-primary">Add Item</button> {% endcomment %}
     </div>
 </form>
 
-
-    {% comment %} <!-- Buttons for Submission -->
-    <a href="{% url 'import_item_add' %}?asset={{ asset.id }}&quantity={{ quantity }}">Add Item</a>
-    <button type="submit" name="submit_record" class="btn btn-primary">Save Import Record</button>
-    <a href="{% url 'import_cancel' %}" class="btn btn-danger">Cancel</a> {% endcomment %}
-
-
 <!-- Section to Display Added Items -->
 <div id="added-items">
-    <h4>Items Added</h4>
     <table class="table mt-3" id="items-table">
         <thead>
             <tr>
-                <th>Asset</th>
-                <th>Quantity</th>
-                <th>Action</th>
+                <th>الصنف</th>
+                <th>الكمية</th>
+                <th>السعر</th>
+                <th>*</th>
             </tr>
         </thead>
         <tbody>
@@ -57,6 +97,35 @@
             {% endfor %}
         </tbody>
     </table>
-</div>
+</div> {% endcomment %}
+
+{% endblock %}
+
+{% block scripts %}
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        const categorySelect = document.getElementById('id_asset_cat');
+        const assetSelect = document.getElementById('id_asset');
+
+        categorySelect.addEventListener('change', function() {
+            const categoryId = this.value;
+
+            // Fetch assets based on the selected category
+            fetch(`/get_assets/${categoryId}/`)
+                .then(response => response.json())
+                .then(data => {
+                    // Clear current options
+                    assetSelect.innerHTML = '';
+                    data.assets.forEach(asset => {
+                        const option = document.createElement('option');
+                        option.value = asset.id;
+                        option.textContent = asset.name;
+                        assetSelect.appendChild(option);
+                    });
+                });
+        });
+    });
+</script>
 
 {% endblock %}

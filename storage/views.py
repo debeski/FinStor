@@ -92,10 +92,6 @@ def manage_assets(request):
     table = AssetTable(assets)
     RequestConfig(request).configure(table)
 
-    print(f"Selected Category: {selected_cat, selected_cat.id if selected_cat else ''}")
-    print(f"Selected Asset: {asset, asset.id if asset else ''}")
-    print(f"category: {category}")
-
     # Render the page with the table and tabs
     return render(request, 'assets.html', {
         'categories': categories_dict,
@@ -109,6 +105,13 @@ def manage_assets(request):
 
 @login_required
 def import_records(request):
+    # Clear residual session data
+    if 'import_items' in request.session:
+        del request.session['import_items']
+    if 'import_record_id' in request.session:
+        del request.session['import_record_id']
+
+    print("Cleared import_items and import_record_id from session.")
     # Fetch all ImportRecord entries
     records = ImportRecord.objects.all().order_by('-date')
     table = ImportRecordTable(records)
@@ -147,20 +150,20 @@ def import_create(request):
                 print("ImportRecord created successfully.")
 
                 # Save all items from the session to the ImportItem Table in DB
-                items = request.session.get('import_items', {})
-                for asset_id, price, quantity in items.items():
-                    print(f"Creating ImportItem with asset_id: {asset_id}, price: {price}, and quantity: {quantity}")
+                # items = request.session.get('import_items', {})
+                for asset_id, item_data in request.session.get('import_items', {}).items():
+                    print(f"Creating ImportItem with asset_id: {asset_id}, price and quantity: {item_data}")
                     ImportItem.objects.create(
                         record=import_record,
                         asset_id=asset_id,
-                        price=price,
-                        quantity=quantity
+                        quantity=item_data['quantity'],
+                        price=item_data['price']
                     )
 
                 # Clear session data after submission
-                if import_items:
+                if 'import_items' in request.session:
                     del request.session['import_items']
-                if import_record_id:
+                if 'import_record_id' in request.session:
                     del request.session['import_record_id']
                 print("Cleared import_items and import_record_id from session.")
 
@@ -173,25 +176,33 @@ def import_create(request):
 
     # Before rendering, check what is in import_items
     import_items = request.session.get('import_items', {})
+    print(request.session.get('import_items', {}))
 
     # Prepare items with asset names for display
     import_items = []
-    for asset_id, price, quantity in request.session.get('import_items', {}).items():
+    for asset_id, item_data  in request.session.get('import_items', {}).items():
         asset = Asset.objects.get(id=asset_id)  # Fetch the asset object
         import_items.append({
             'id': asset_id,       # Pass the asset_id for delete functionality
             'name': asset.name,  # Use the asset's name field
-            'price': price,
-            'quantity': quantity,
+            'quantity': item_data['quantity'],
+            'price': item_data['price'],
+            'total': float(item_data['price']) * int(item_data['quantity']),
         })
 
-
+    print(f"{import_record_id}")
     print(f"Rendering template with import_items: {import_items}")
     return render(request, 'invoice.html', {
         'import_record_form': import_record_form,
         'import_item_form': import_item_form,
         'import_items': import_items,  # Updated import items with names
     })
+
+
+def get_assets(request, category_id):
+    assets = Asset.objects.filter(category_id=category_id).values('id', 'name')
+    return JsonResponse({'assets': list(assets)})
+
 
 @login_required
 def import_item_add(request):
@@ -201,12 +212,15 @@ def import_item_add(request):
 
     if asset_id and price and quantity:
         items = request.session.get('import_items', {})
-        items[asset_id] = quantity
+        items[asset_id] = {
+            'quantity': quantity,
+            'price': price,
+        }
         request.session['import_items'] = items
-        print(f"Added item to session: {asset_id} -> {price} -> {quantity}")
+        print(f"Added item to session: {asset_id} -> {quantity} -> {price}")
     else:
         print("Asset ID or price or quantity missing.")
-        print(f"requested:  {asset_id} -> {price} -> {quantity}")
+        print(f"requested:  {asset_id} -> {quantity} -> {price}")
 
     # Redirect back to the form page
     return redirect('import_create')
@@ -249,6 +263,48 @@ def import_cancel(request):
 
     # Redirect to the import_create page
     return redirect('import_records')
+
+
+def import_details(request, trans_id):
+    # Get the transaction record by trans_id
+    record = get_object_or_404(ImportRecord, trans_id=trans_id)
+    
+    # Get related assets from ImportItem
+    related_assets = ImportItem.objects.filter(record=record).select_related('asset')
+
+    # Prepare data for the template
+    assets_with_totals = [
+        {
+            'name': asset.asset.name,
+            'brand': asset.asset.brand,
+            'quantity': asset.quantity,
+            'price': asset.price,  # Assuming Asset model has a `price` field
+            'total': asset.quantity * asset.price,  # Calculate total
+        }
+        for asset in related_assets
+    ]
+
+    context = {
+        'record': record,
+        'related_assets': assets_with_totals,
+    }
+    return render(request, 'import_details.html', context)
+
+
+
+# def import_details(request, trans_id):
+#     # Get the transaction record by trans_id
+#     record = get_object_or_404(ImportRecord, trans_id=trans_id)
+    
+#     # Get related assets from ImportItem
+#     related_assets = ImportItem.objects.filter(record=record)
+
+#     context = {
+#         'record': record,
+#         'related_assets': related_assets,
+#     }
+#     print(related_assets)
+#     return render(request, 'import_details.html', context)  # Adjust template path as needed
 
 # ------------------------------------------------------------  IMPORTANT  ------------------------------------------------------------
 

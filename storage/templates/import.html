@@ -1,9 +1,16 @@
-{% extends 'core/base.html' %}
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% load django_tables2 %}
 {% load static %}
 
 {% block content %}
+<div class="container mt-3">
+    <h2>Import Records</h2>
 
+    <!-- Button to create a new Import Record -->
+    <a href="{% url 'import_create' %}" class="btn btn-primary mb-3">Add New Record</a>
 
+    <!-- Render the table -->
+    {% render_table table %}
+</div>
 {% endblock %}

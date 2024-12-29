@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load django_tables2 %}
+{% load static %}
+
+{% block content %}
+    <h2>Create Import Record</h2>
+
+    <form method="POST" action="{% url 'import_create' %}" novalidate>
+        {% csrf_token %}
+        
+        <h3>Import Record Details</h3>
+        {% crispy import_record_form %}
+        
+        <hr>
+        
+        <h3>Add Items</h3>
+        {% crispy import_item_form %}
+        
+        {% comment %} <button type="submit" name="add_item" class="btn btn-primary">Add Item</button> {% endcomment %}
+    
+        <hr>
+        
+        <!-- Display the items added so far -->
+        <h4>Items Added</h4>
+        <table class="table mt-3" id="items-table">
+            <thead>
+                <tr>
+                    <th>Asset</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asset_id, quantity in import_items.items %}
+                    <tr>
+                        <td>{{ asset_id }} <!-- Fetch asset name from the Asset model --></td>
+                        <td>{{ quantity }}</td>
+                        <td><a href="{% url 'import_item_delete' asset_id=asset_id %}" class="btn btn-danger">Remove</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        {% comment %} <button type="submit" name="submit_record" class="btn btn-success">Submit Import Record</button> {% endcomment %}
+    </form>
+    
+
+{% endblock %}

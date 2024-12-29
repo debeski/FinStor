@@ -94,7 +94,6 @@ class ImportRecordForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['company'].queryset = Company.objects.all()
-        self.fields['notes'].required = False
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Div(
@@ -112,40 +111,29 @@ class ImportRecordForm(forms.ModelForm):
                 Submit('submit_record', 'حفظ اذن الاستلام', css_class='btn btn-primary'),
             )
         )
-        set_field_attrs(self)
 
 class ImportItemForm(forms.ModelForm):
     class Meta:
         model = ImportItem
-        fields = ['asset', 'price', 'quantity']
+        fields = ['asset', 'quantity']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['asset'].queryset = Asset.objects.all()
         self.fields['asset'].required = False
-        self.fields['price'].required = False
         self.fields['quantity'].required = False
-        self.fields['quantity'].widget.attrs.update({
-            'min': '1.00',
-        })
-        self.fields['price'].widget.attrs.update({
-            'min': '1.00',
-            'step': '1.00',
-            'value': '1.00',
-        })
         self.helper = FormHelper()
         self.helper.layout = Layout(
-            Field('asset', css_class='form-control'),
             Div(
+                Div(Field('asset', css_class='form-control'), css_class='col-sm-8'),
                 Div(Field('quantity', css_class='form-control'), css_class='col-sm-4'),
-                Div(Field('price', css_class='form-control'), css_class='col-sm-4'),
                 css_class='input-group mb-1'
             ),
             FormActions(
-                Submit('submit', 'اضافة صنف', css_class='btn btn-primary'),
+                Submit('add_item', 'اضافة صنف', css_class='btn btn-primary'),
             )
         )
-        set_field_attrs(self)
+
 
 # New Return ImportItem Form
 class ReturnFromStorageForm(forms.ModelForm):

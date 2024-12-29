@@ -55,8 +55,7 @@ class Asset(models.Model):
 
     unit = models.CharField(max_length=50, choices=[
         ('piece', 'قطعة'),
-        ('box', 'عبوة'),
-        ('set', 'طقم'),
+        ('box', 'علبة'),
     ], verbose_name="وحدة القياس", default='piece')
 
     class Meta:
@@ -71,12 +70,12 @@ class Asset(models.Model):
 # Import Transaction Model:
 class ImportRecord(models.Model):
     trans_id = models.AutoField(primary_key=True)
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True)
+    company = models.ForeignKey(Company, on_delete=models.PROTECT)
     date = models.DateField()
-    assign_number = models.CharField(max_length=50, blank=True, null=True)
+    assign_number = models.CharField(max_length=50)
     assign_date = models.DateField()
     items = models.ManyToManyField(Asset, through='ImportItem')
-    notes = models.TextField(blank=True)
+    notes = models.TextField()
     pdf_file = models.FileField(upload_to=get_pdf_upload_path, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -89,10 +88,9 @@ class ImportRecord(models.Model):
 
 # Import Transaction Items:
 class ImportItem(models.Model):
-    record = models.ForeignKey(ImportRecord, related_name='Importeditems', on_delete=models.SET_NULL, null=True)
+    trans = models.ForeignKey(ImportRecord, related_name='Importeditems', on_delete=models.SET_NULL, null=True)
     asset = models.ForeignKey('Asset', related_name='ImportRecord', on_delete=models.PROTECT)
     quantity = models.PositiveIntegerField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

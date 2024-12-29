@@ -61,13 +61,13 @@
                             <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='department' %}">
                                 <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">اذونات الصرف</button>
                             </a>
-                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='affiliate' %}">
+                            <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'import_records' %}">
                                 <button class="acc-button {% if '/manage/department/' in request.path %}active{% endif %}">اذونات الاستلام</button>
                             </a>
-                            <a class="acc-button-a {% if '/storage/categories/' in request.path %}active{% endif %}" href="{% url 'manage_categories' %}">
+                            <a class="acc-button-a {% if '/storage/categories/' in request.path %}active{% endif %}" href="{% url 'manage_category' %}">
                                 <button class="acc-button {% if '/storage/categories/' in request.path %}active{% endif %}">التصنيفات</button>
                             </a>                            
-                            <a class="acc-button-a {% if 'storage/assets/' in request.path %}active{% endif %}" href="{% url 'asset_management' %}">
+                            <a class="acc-button-a {% if 'storage/assets/' in request.path %}active{% endif %}" href="{% url 'manage_assets' %}">
                                 <button class="acc-button {% if 'storage/assets/' in request.path %}active{% endif %}">الأصناف</button>
                             </a>
                             <a class="acc-button-a {% if '/manage/department/' in request.path %}active{% endif %}" href="{% url 'manage_sections' model_name='affiliate' %}">

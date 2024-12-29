@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load django_tables2 %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/fields.css' %}">
+
+    <h2>Create Import Record</h2>
+
+ <!-- Main transaction form -->
+<form id="import-form" method="POST" action="{% url 'import_create' %}">
+    {% csrf_token %}
+
+    <div id="add-record-fields">
+        {% crispy import_record_form %}
+        {% comment %} <button type="submit" name="submit_record" class="btn btn-primary">Save Import Record</button> {% endcomment %}
+    </div>
+
+</form>
+    <!-- Add Item Form Fields -->
+<form id="item-form" method="GET" action="{% url 'import_item_add' %}">
+    <div id="add-item-fields">
+        {% crispy import_item_form %}
+        {% comment %} <button type="submit" class="btn btn-primary">Add Item</button> {% endcomment %}
+    </div>
+</form>
+
+
+    {% comment %} <!-- Buttons for Submission -->
+    <a href="{% url 'import_item_add' %}?asset={{ asset.id }}&quantity={{ quantity }}">Add Item</a>
+    <button type="submit" name="submit_record" class="btn btn-primary">Save Import Record</button>
+    <a href="{% url 'import_cancel' %}" class="btn btn-danger">Cancel</a> {% endcomment %}
+
+
+<!-- Section to Display Added Items -->
+<div id="added-items">
+    <h4>Items Added</h4>
+    <table class="table mt-3" id="items-table">
+        <thead>
+            <tr>
+                <th>Asset</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in import_items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>
+                        <a href="{% url 'import_item_delete' item.id %}">Remove</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

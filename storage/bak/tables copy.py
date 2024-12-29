@@ -1,5 +1,5 @@
 import django_tables2 as tables
-from .models import AssetCategory, Asset, ImportRecord
+from .models import AssetCategory, Asset
 from django.utils.safestring import mark_safe
 from django.urls import reverse
 
@@ -27,17 +27,3 @@ class AssetTable(tables.Table):
 
     def render_edit(self, value, record):
         return mark_safe(f'<a href="{reverse("manage_assets")}?category={record.category.id}&id={value}" class="btn btn-secondary">تعديل</a>')
-
-
-class ImportRecordTable(tables.Table):
-    # Define table columns
-    trans_id = tables.Column()
-    company = tables.Column()
-    date = tables.Column()
-
-    class Meta:
-        model = ImportRecord
-        template_name = "django_tables2/bootstrap5.html"  # You can choose a different template style
-        fields = ("trans_id", "date", "assign_number", "assign_date", "items", "company")  # Fields to display in the table
-
-

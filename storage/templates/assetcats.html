@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load django_tables2 %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-2">
+    <!-- Add/Edit Form -->
+    <div class="row">
+        <h3>{% if editing %}تعديل{% else %}اضافة{% endif %} تصنيف</h3>
+        <form method="post">
+            {% csrf_token %}
+            {% crispy form %}
+        </form>
+    </div>
+    <div class="row">
+        <!-- Categories Table -->
+        <h3>قائمة التصنيفات</h3>
+        {% render_table table %}
+    </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}

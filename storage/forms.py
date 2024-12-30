@@ -1,28 +1,70 @@
 from django import forms
 from django.contrib.contenttypes.models import ContentType
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, Field
-from .models import Department, Affiliate, Employee, Asset, ImportRecord, ImportItem, ExportRecord, ExportItem 
+from crispy_forms.layout import Submit, Layout, Field, Div
+from crispy_forms.bootstrap import FormActions
+from .models import Department, Affiliate, Employee, AssetCategory, Asset, ImportRecord, ImportItem, ExportRecord, ExportItem 
+from core.forms import set_field_attrs, set_first_choice
 
 
 
-# New Asset Form
-class AssetForm(forms.ModelForm):
+class AssetCategoryForm(forms.ModelForm):
     class Meta:
-        model = Asset
-        fields = ['type', 'name', 'brand', 'unit', 'quantity']
-    
+        model = AssetCategory
+        fields = ['name', 'discription']
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.layout = Layout(
-            'type',
-            'name',
-            'brand',
-            'unit',
-            'quantity',
-            Submit('submit', 'Save', css_class='btn btn-primary')
+            Div(
+                Div(Field('name', css_class='form-control'), css_class='col-sm-5'),
+                Div(Field('discription', css_class='form-control'), css_class='col-sm-7'),
+                css_class='input-group mb-1'
+            ),
+            FormActions(
+                Submit('submit', '{% if form.instance.id %}تحديث{% else %}اضافة{% endif %}', css_class='btn btn-primary'),
+            )
         )
+        set_field_attrs(self)
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+        if AssetCategory.objects.filter(name=name).exists():
+            raise forms.ValidationError("A category with this name already exists.")
+        return name
+    
+    
+# New Asset Form
+class AssetForm(forms.ModelForm):
+    class Meta:
+        model = Asset
+        fields = ['category', 'name', 'brand', 'unit']
+
+    def __init__(self, *args, **kwargs):
+        selected_cat = kwargs.pop('selected_cat', None)
+        super().__init__(*args, **kwargs)
+        set_first_choice(self.fields['category'], 'التصنيف')
+
+        # Dynamically set the type field
+        if selected_cat:
+            self.fields['category'].initial = selected_cat
+            self.fields['category'].widget = forms.HiddenInput()
+
+        # Configure crispy form helper
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            'category',
+            Div(
+                Div(Field('name', css_class='form-control'), css_class='col-sm-5'),
+                Div(Field('brand', css_class='form-control'), css_class='col-sm-4'),
+                Div(Field('unit', css_class='form-control'), css_class='col-sm-3'),
+                css_class='input-group mb-1'
+            ),
+            FormActions(
+                Submit('submit', '{% if form.instance.id %}تحديث{% else %}اضافة{% endif %}', css_class='btn btn-primary'),
+            )
+        )
+        set_field_attrs(self)
 
 
 # New ImportRecord Form
@@ -84,7 +126,7 @@ class ReturnFromStorageForm(forms.ModelForm):
 class ExportRecordForm(forms.ModelForm):
     class Meta:
         model = ExportRecord
-        fields = ['trans_id', 'export_type', 'entity_selection', 'date', 'notes']
+        fields = ['trans_id', 'export_type', 'date', 'notes']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load django_tables2 %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-2">
+    <h2 class="p-2">التصنيفات</h2>
+
+    <!-- Tabs for Asset Types -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link {% if not selected_cat %}active{% endif %}" 
+               href="?">الكل</a>
+        </li>
+        {% for key, value in categories.items %}
+            <li class="nav-item">
+                <a class="nav-link {% if key == selected_cat.id %}active{% endif %}" 
+                    href="?category={{ key }}">{{ value }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Form for Adding New Assets -->
+    <div class="mt-2">
+        <h3 class="p-2">اضافة صنف</h3>
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {% crispy form %}
+        </form>
+    </div>
+
+    <!-- Table for Assets -->
+    <div class="mt-1">
+        <h3 class="p-2">الاصناف</h3>
+        {% render_table table %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

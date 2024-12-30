@@ -1,7 +1,7 @@
 from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, Field, Fieldset, Div, HTML, Button
-from crispy_forms.bootstrap import InlineField, FormActions
+from crispy_forms.layout import Submit, Layout, Field, Div, HTML
+from crispy_forms.bootstrap import FormActions
 from .models import Company, Department, Affiliate, SubAffiliate, Employee
 from django.db.models import Q
 import re
@@ -27,7 +27,11 @@ def set_field_attrs(form):
         field.widget.attrs['autocomplete'] = 'off'  # Disable autocomplete
         field.label = ''  # Clear the label
 
-
+# Function to validate some form fields
+def validator(form):
+    """Set common attributes for all fields in the form."""
+    for field_name in form.fields:
+        field = form.fields.get(field_name)
         # Set specific patterns based on field name
         if field_name == 'name' :
             # Allow Arabic letters only.
@@ -82,6 +86,7 @@ class CompanyForm(forms.ModelForm):
             )
         )
         set_field_attrs(self)
+        validator(self)
 
 
 class DepartmentForm(forms.ModelForm):
@@ -105,6 +110,7 @@ class DepartmentForm(forms.ModelForm):
             )
         )
         set_field_attrs(self)
+        validator(self)
 
 
 class AffiliateForm(forms.ModelForm):
@@ -130,6 +136,7 @@ class AffiliateForm(forms.ModelForm):
             )
         )
         set_field_attrs(self)
+        validator(self)
 
 
 class SubAffiliateForm(forms.ModelForm):
@@ -158,7 +165,8 @@ class SubAffiliateForm(forms.ModelForm):
             )
         )
         set_field_attrs(self)
-    
+        validator(self)
+
     def save(self, commit=True):
         # Overriding the save method to automatically set the affiliate
         instance = super().save(commit=False)
@@ -208,4 +216,5 @@ class EmployeeForm(forms.ModelForm):
             )
         )
         set_field_attrs(self)
+        validator(self)
 

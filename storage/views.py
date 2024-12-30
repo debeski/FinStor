@@ -105,13 +105,11 @@ def manage_assets(request):
 
 @login_required
 def import_records(request):
-    # Clear residual session data
+
+    # Clear any residual session data
     if 'import_items' in request.session:
         del request.session['import_items']
-    if 'import_record_id' in request.session:
-        del request.session['import_record_id']
 
-    print("Cleared import_items and import_record_id from session.")
     # Fetch all ImportRecord entries
     records = ImportRecord.objects.all().order_by('-date')
     table = ImportRecordTable(records)
@@ -121,37 +119,27 @@ def import_records(request):
 
 @login_required
 def import_create(request):
-    # Check if the import record has already been saved
-    import_record_id = request.session.get('import_record_id')
     import_record_instance = None
-
-    if import_record_id:
-        # Retrieve the existing import record instance
-        import_record_instance = ImportRecord.objects.get(trans_id=import_record_id)
-
-    # Initialize forms
     import_record_form = ImportRecordForm(request.POST or None, instance=import_record_instance)
     import_item_form = ImportItemForm()
 
-    # Session-based dictionary for storing items temporarily
-    if 'import_items' not in request.session:
-        request.session['import_items'] = {}
-        print("Initialized import_items in session.")
-
     # Handle both form submissions and Cancel action
     if request.method == 'POST':
-        print(f"POST request received: {request.POST}")
-        
+
         # Finalize the import record submission
         if 'submit_record' in request.POST:
-            print("Submitting import record form.")
-            if import_record_form.is_valid():
+            print("Submitting import record form...")
+            import_items = request.session.get('import_items', {})
+
+            if not import_items:
+                import_record_form.add_error(None, "يرجى اضافة صنف واحد على الاقل قبل محاولة حفظ الاذن.")
+
+            if import_record_form.is_valid() and import_items:
                 import_record = import_record_form.save()
                 print("ImportRecord created successfully.")
 
                 # Save all items from the session to the ImportItem Table in DB
-                # items = request.session.get('import_items', {})
-                for asset_id, item_data in request.session.get('import_items', {}).items():
+                for asset_id, item_data in import_items.items():
                     print(f"Creating ImportItem with asset_id: {asset_id}, price and quantity: {item_data}")
                     ImportItem.objects.create(
                         record=import_record,
@@ -163,39 +151,32 @@ def import_create(request):
                 # Clear session data after submission
                 if 'import_items' in request.session:
                     del request.session['import_items']
-                if 'import_record_id' in request.session:
-                    del request.session['import_record_id']
-                print("Cleared import_items and import_record_id from session.")
+                print("Cleared import items from session data after record creation.")
 
                 # Redirect to success or summary page
-                messages.success(request, 'Import record created successfully!')
+                messages.success(request, f"تم اضافة اذن استلام رقم: {asset_id} بنجاح.")
                 return redirect('import_records')
             else:
                 print("Import record form is invalid.")
                 print(f"Form errors: {import_record_form.errors}")
 
-    # Before rendering, check what is in import_items
-    import_items = request.session.get('import_items', {})
-    print(request.session.get('import_items', {}))
-
     # Prepare items with asset names for display
     import_items = []
     for asset_id, item_data  in request.session.get('import_items', {}).items():
-        asset = Asset.objects.get(id=asset_id)  # Fetch the asset object
+        asset = Asset.objects.get(id=asset_id)
         import_items.append({
-            'id': asset_id,       # Pass the asset_id for delete functionality
-            'name': asset.name,  # Use the asset's name field
+            'id': asset_id,
+            'name': asset.name,
             'quantity': item_data['quantity'],
             'price': item_data['price'],
             'total': float(item_data['price']) * int(item_data['quantity']),
         })
 
-    print(f"{import_record_id}")
     print(f"Rendering template with import_items: {import_items}")
     return render(request, 'invoice.html', {
         'import_record_form': import_record_form,
         'import_item_form': import_item_form,
-        'import_items': import_items,  # Updated import items with names
+        'import_items': import_items,
     })
 
 
@@ -206,6 +187,8 @@ def get_assets(request, category_id):
 
 @login_required
 def import_item_add(request):
+
+    # Asset fields for the ImportItemForm
     asset_id = request.GET.get('asset')
     quantity = request.GET.get('quantity')
     price = request.GET.get('price')
@@ -252,15 +235,6 @@ def import_cancel(request):
         del request.session['import_items']
         print("Cleared import_items from session.")
     
-    # Optionally, delete the associated ImportRecord (if any exists)
-    if 'import_record' in request.session:
-        import_record = ImportRecord.objects.filter(trans_id=request.session['import_record']).first()
-        if import_record:
-            import_record.delete()
-            print(f"Deleted ImportRecord with trans_id: {request.session['import_record']}")
-        del request.session['import_record']
-        print("Cleared import_record from session.")
-
     # Redirect to the import_create page
     return redirect('import_records')
 
@@ -289,142 +263,4 @@ def import_details(request, trans_id):
         'related_assets': assets_with_totals,
     }
     return render(request, 'import_details.html', context)
-
-
-
-# def import_details(request, trans_id):
-#     # Get the transaction record by trans_id
-#     record = get_object_or_404(ImportRecord, trans_id=trans_id)
-    
-#     # Get related assets from ImportItem
-#     related_assets = ImportItem.objects.filter(record=record)
-
-#     context = {
-#         'record': record,
-#         'related_assets': related_assets,
-#     }
-#     print(related_assets)
-#     return render(request, 'import_details.html', context)  # Adjust template path as needed
-
-# ------------------------------------------------------------  IMPORTANT  ------------------------------------------------------------
-
-# @login_required
-# def import_create(request):
-#     # Check if the import record has already been saved
-#     import_record_id = request.session.get('import_record_id')
-#     import_record_instance = None
-
-#     if import_record_id:
-#         # Retrieve the existing import record instance
-#         import_record_instance = ImportRecord.objects.get(trans_id=import_record_id)
-
-#     # Initialize forms
-#     import_record_form = ImportRecordForm(request.POST or None, instance=import_record_instance)
-#     import_item_form = ImportItemForm(request.POST or None)
-
-#     # Session-based dictionary for storing items temporarily
-#     if 'import_items' not in request.session:
-#         request.session['import_items'] = {}
-#         print("Initialized import_items in session.")
-
-#     # Handle both form submissions and Cancel action
-#     if request.method == 'POST':
-#         print(f"POST request received: {request.POST}")
-        
-#         # Handle adding an item to the import record
-#         if 'add_item' in request.POST:
-
-#             # Validate and save the import record form
-#             if import_record_form.is_valid():
-#                 import_record = import_record_form.save()
-
-#                 # Save the import record ID in the session for "edit mode"
-#                 request.session['import_record_id'] = import_record.trans_id
-                
-#                 # Add the item to the session
-#                 if import_item_form.is_valid():
-#                     item_data = {
-#                         'asset': str(request.POST.get('asset')),
-#                         'quantity': request.POST.get('quantity')
-#                     }
-#                     print(f"Adding item: {item_data}")
-#                     items = request.session['import_items']
-#                     items[item_data['asset']] = item_data['quantity']
-#                     request.session['import_items'] = items
-#                     print(f"Current items in session: {items}")
-
-#                 # Redirect to the same page to keep adding items
-#                 return redirect('import_create')
-#             else:
-#                 print(f"Item form errors: {import_item_form.errors}")
-
-
-#         # Finalize the import record submission
-#         elif 'submit_record' in request.POST:
-#             print("Submitting import record form.")
-#             if import_record_form.is_valid():
-#                 import_record = import_record_form.save()
-#                 print("ImportRecord created successfully.")
-
-#                 # Save all items from the session to the ImportItem Table in DB
-#                 items = request.session.get('import_items', {})
-#                 for asset_id, quantity in items.items():
-#                     print(f"Creating ImportItem with asset_id: {asset_id}, quantity: {quantity}")
-#                     ImportItem.objects.create(
-#                         record=import_record,
-#                         asset_id=asset_id,
-#                         quantity=quantity
-#                     )
-
-#                 # Clear session data after submission
-#                 del request.session['import_items']
-#                 del request.session['import_record_id']
-#                 print("Cleared import_items and import_record_id from session.")
-
-#                 # Redirect to success or summary page
-#                 messages.success(request, 'Import record created successfully!')
-#                 return redirect('import_records')
-#             else:
-#                 print("Import record form is invalid.")
-#                 print(f"Form errors: {import_record_form.errors}")
-
-#         elif 'cancel' in request.POST:
-#             print("Cancel button pressed. Clearing import_items and deleting ImportRecord.")
-        
-#             # Clear the import_items from session
-#             del request.session['import_items']
-#             print("Cleared import_items from session.")
-            
-#             # Optionally, delete the associated ImportRecord (if any exists)
-#             if 'import_record' in request.session:
-#                 import_record = ImportRecord.objects.filter(trans_id=request.session['import_record']).first()
-#                 if import_record:
-#                     import_record.delete()
-#                     print(f"Deleted ImportRecord with trans_id: {request.session['import_record']}")
-#                 del request.session['import_record']
-#                 print("Cleared import_record from session.")
-#             print(request)
-#             # Redirect to the import_create page
-#             return redirect('import_records')
-
-#     # # Before rendering, check what is in import_items
-#     # import_items = request.session.get('import_items', {})
-#     print(request.POST)
-#     # Prepare items with asset names for display
-#     import_items = []
-#     for asset_id, quantity in request.session.get('import_items', {}).items():
-#         asset = Asset.objects.get(id=asset_id)  # Fetch the asset object
-#         import_items.append({
-#             'id': asset_id,       # Pass the asset_id for delete functionality
-#             'name': asset.name,  # Use the asset's name field
-#             'quantity': quantity,
-#         })
-
-
-#     print(f"Rendering template with import_items: {import_items}")
-#     return render(request, 'invoice.html', {
-#         'import_record_form': import_record_form,
-#         'import_item_form': import_item_form,
-#         'import_items': import_items,  # Updated import items with names
-#     })
 

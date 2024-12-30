@@ -363,3 +363,11 @@ td:last-child, th:last-child {
     margin-left: 5px;  /* Optional: Add some space between checkboxes */
     margin-right: 10px;
 }
+
+
+.alert {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+

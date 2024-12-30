@@ -4,10 +4,19 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Field, Div, HTML
 from crispy_forms.bootstrap import FormActions
 from .models import Company, Department, Affiliate, Employee, AssetCategory, Asset, ImportRecord, ImportItem, ExportRecord, ExportItem 
-from core.forms import set_field_attrs, set_first_choice
+from core.forms import set_first_choice
 from django.urls import reverse
 
-
+# Function to set attributes for all fields in the form
+def set_field_attrs(form):
+    """Set common attributes for all fields in the form."""
+    for field_name in form.fields:
+        field = form.fields.get(field_name)
+        # Common attributes
+        field.widget.attrs['placeholder'] = field.label  # Set placeholder as field label
+        field.widget.attrs['dir'] = 'rtl'  # Set text direction
+        # field.widget.attrs['autocomplete'] = 'off'  # Disable autocomplete
+        field.label = ''  # Clear the label
 
 class AssetCategoryForm(forms.ModelForm):
     class Meta:
@@ -87,6 +96,8 @@ class AssetForm(forms.ModelForm):
 
 # New ImportRecord Form
 class ImportRecordForm(forms.ModelForm):
+    hidden_field = forms.CharField(widget=forms.HiddenInput(), required=False)
+
     class Meta:
         model = ImportRecord
         fields = ['company', 'date', 'assign_number', 'assign_date', 'notes']

@@ -13,13 +13,13 @@
     {% csrf_token %}
     <div class="row">
         <div class="col-md-5">
-            <!-- Add Item Form Fields -->
+<!-- Add Item Form Fields -->
             <form id="item-form" method="GET" action="{% url 'import_item_add' %}">
                 {% crispy import_item_form %}
             </form>
         </div>
         <div class="col-md-7">
-        <!-- Add Record Form Fields -->
+<!-- Add Record Form Fields -->
         <form id="import-form" method="POST" action="{% url 'import_create' %}">
             {% crispy import_record_form %}
         </form>
@@ -34,6 +34,7 @@
                         <th>الصنف</th>
                         <th>الكمية</th>
                         <th>السعر</th>
+                        <th>الاجمالي</th>
                         <th>*</th>
                     </tr>
                 </thead>
@@ -43,6 +44,7 @@
                             <td>{{ item.name }}</td>
                             <td>{{ item.quantity }}</td>
                             <td>{{ item.price }}</td>
+                            <td>{{ item.total }}</td>
                             <td>
                                 <a href="{% url 'import_item_delete' item.id %}">Remove</a>
                             </td>
@@ -103,6 +105,7 @@
 
 {% block scripts %}
 
+<!-- Script to Show Assets based Category-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
         const categorySelect = document.getElementById('id_asset_cat');
@@ -124,6 +127,35 @@
                         assetSelect.appendChild(option);
                     });
                 });
+        });
+    });
+</script>
+
+<!-- Script to store Record Fields in Session between Item additions-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const formId = 'import-form'; // Replace with your form's ID or class
+        const storageKey = 'importRecordFormData'; // Session storage key
+    
+        const form = document.getElementById(formId);
+    
+        // Load saved data from session storage
+        const savedData = JSON.parse(sessionStorage.getItem(storageKey) || '{}');
+        for (const [fieldName, value] of Object.entries(savedData)) {
+            const field = form.elements[fieldName];
+            if (field) field.value = value; // Populate form fields
+        }
+    
+        // Save data to session storage on input change
+        form.addEventListener('input', function (event) {
+            const data = JSON.parse(sessionStorage.getItem(storageKey) || '{}');
+            data[event.target.name] = event.target.value; // Save current field's value
+            sessionStorage.setItem(storageKey, JSON.stringify(data));
+        });
+    
+        // Clear session storage on form submit
+        form.addEventListener('submit', function () {
+            sessionStorage.removeItem(storageKey);
         });
     });
 </script>

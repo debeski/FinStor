@@ -36893,3 +36893,617 @@ INFO 2024-12-29 21:45:14,323 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
 INFO 2024-12-29 21:45:24,433 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
 INFO 2024-12-29 21:45:43,651 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=mcNFVn4jCTKkRd3Qv6SQenQH9BCEjHbs6FQbpCQjyslVMayLdgJZCpcGjyS66z5y&asset_cat=1&asset=1&quantity=1&price=700000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
 INFO 2024-12-29 21:45:43,724 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16136
+INFO 2024-12-29 22:45:31,846 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16232
+INFO 2024-12-29 22:45:31,939 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2024-12-29 22:45:32,224 log Not Found: /favicon.ico
+WARNING 2024-12-29 22:45:32,225 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-29 23:01:53,015 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 23:01:53,822 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 23:05:01,773 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:05:04,342 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:05:21,265 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 23:05:21,363 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-29 23:05:22,516 basehttp "GET /storage/import/new/ HTTP/1.1" 200 15822
+INFO 2024-12-29 23:05:28,643 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-29 23:05:53,533 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=fOFmq4tuNxe4jyl3AIOl0QINUV7UtH4pZhISUjfuJ6PFevQYiSFuoS4M4SnmgzYv&asset_cat=1&asset=1&quantity=3&price=300000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 23:05:53,607 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16232
+INFO 2024-12-29 23:08:57,581 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:08:58,961 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 23:09:01,579 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 23:09:01,690 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 23:09:01,695 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-29 23:09:01,695 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 23:09:01,714 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 23:09:01,727 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 23:09:01,734 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 23:09:01,734 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 23:09:01,752 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 23:09:01,752 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 23:09:01,776 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 200 49452
+INFO 2024-12-29 23:09:01,779 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 23:09:01,786 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+INFO 2024-12-29 23:09:01,788 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+WARNING 2024-12-29 23:09:02,001 log Not Found: /favicon.ico
+WARNING 2024-12-29 23:09:02,002 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-29 23:09:02,934 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 23:09:04,411 basehttp "GET /storage/import/new/ HTTP/1.1" 200 15822
+INFO 2024-12-29 23:09:08,049 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-29 23:09:22,455 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=VFB9tfMMWGooVduQ3LbJHQunRoSxEKbLF8EFXuyMSfZZQaZLLV2S5SQm1l8ZrC5R&asset_cat=1&asset=3&quantity=1&price=400000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 23:09:22,531 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16233
+INFO 2024-12-29 23:17:00,309 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:17:02,437 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:20:03,267 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:20:05,332 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:20:08,763 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 23:20:09,237 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 23:20:52,792 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:20:55,200 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:20:56,725 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 23:20:58,075 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 23:21:53,774 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:21:56,083 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:21:59,778 basehttp "GET /storage/categories/ HTTP/1.1" 200 14003
+INFO 2024-12-29 23:22:00,897 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 23:22:07,009 basehttp "GET /storage/import/new/ HTTP/1.1" 200 15802
+INFO 2024-12-29 23:22:33,267 basehttp "GET /storage/import/new/cancel HTTP/1.1" 302 0
+INFO 2024-12-29 23:22:33,420 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 23:23:17,624 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:23:19,711 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:31:17,340 autoreload /workspaces/FinStor/storage/forms.py changed, reloading.
+INFO 2024-12-29 23:31:19,230 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:36:28,994 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:36:31,272 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:38:58,120 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:39:00,352 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:39:14,616 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:39:18,285 basehttp "GET /storage/import/ HTTP/1.1" 200 20152
+INFO 2024-12-29 23:39:18,371 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-29 23:39:18,377 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-29 23:39:18,377 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-29 23:39:18,384 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-29 23:39:18,402 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-29 23:39:18,407 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-29 23:39:18,409 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-29 23:39:18,414 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-29 23:39:18,418 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-29 23:39:18,460 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-29 23:39:18,461 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-29 23:39:18,473 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-29 23:39:18,533 log Not Found: /favicon.ico
+WARNING 2024-12-29 23:39:18,534 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-29 23:39:28,926 basehttp "GET /storage/import/new/ HTTP/1.1" 200 15929
+INFO 2024-12-29 23:39:31,233 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-29 23:39:32,823 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+ERROR 2024-12-29 23:40:27,527 log Internal Server Error: /storage/import/new/add/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 228, in import_item_add
+    items = request.session['import_items']
+            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/sessions/backends/base.py", line 55, in __getitem__
+    return self._session[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'import_items'
+ERROR 2024-12-29 23:40:27,537 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=9VIkQtes0Sf7KxZ2AP5Ktnknq6XvMrtMToLQkI0sWrQIFuuXiZWTRpGmA3dXzjnS&asset_cat=2&asset=2&quantity=7&price=29&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 500 76971
+INFO 2024-12-29 23:41:44,065 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:41:46,253 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:41:49,417 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=9VIkQtes0Sf7KxZ2AP5Ktnknq6XvMrtMToLQkI0sWrQIFuuXiZWTRpGmA3dXzjnS&asset_cat=2&asset=2&quantity=7&price=29&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 23:41:49,548 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16322
+INFO 2024-12-29 23:42:28,119 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:42:30,322 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:42:54,029 basehttp "GET /get_assets/4/ HTTP/1.1" 200 14
+INFO 2024-12-29 23:42:57,284 basehttp "GET /get_assets/3/ HTTP/1.1" 200 231
+INFO 2024-12-29 23:43:04,823 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=rkx7gVUYNTMehdfMEUs55vL65BcRMxoLbNADKaGYJsnPcaKHm4jetx75fysjzpiR&asset_cat=3&asset=5&quantity=2&price=8600&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 23:43:04,979 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16737
+INFO 2024-12-29 23:50:04,215 autoreload /workspaces/FinStor/storage/forms.py changed, reloading.
+INFO 2024-12-29 23:50:06,467 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:50:10,562 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-29 23:50:38,282 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=wQaRVgXVEndnD0XjmaGFm4VI6Hwt8TIugjdnpvJVAWOYyXse4kxOK6hHgEMVVLCA&asset_cat=2&asset=2&quantity=1&price=3&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 23:50:38,428 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16734
+INFO 2024-12-29 23:53:59,816 autoreload /workspaces/FinStor/storage/forms.py changed, reloading.
+INFO 2024-12-29 23:54:01,933 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:56:38,728 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:56:41,225 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:57:38,522 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-29 23:57:40,912 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 23:57:48,885 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16607
+INFO 2024-12-29 23:57:52,131 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-29 23:57:53,628 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16607
+INFO 2024-12-29 23:57:55,391 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-29 23:58:02,223 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-29 23:58:21,966 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=5lHfQ0tdIReO2ehRPgawXzw9wHEjkVP7POKLkffdEqPpXbMMxq1FlBS8GEUL7NJd&asset_cat=1&asset=1&quantity=1&price=400000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-29 23:58:22,034 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17017
+INFO 2024-12-29 23:58:38,620 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-29 23:58:38,806 basehttp "GET /storage/import/ HTTP/1.1" 200 20211
+INFO 2024-12-29 23:58:48,728 basehttp "GET /storage/import/?page=2 HTTP/1.1" 200 19425
+INFO 2024-12-29 23:58:50,080 basehttp "GET /storage/import/?page=1 HTTP/1.1" 200 20277
+INFO 2024-12-29 23:59:00,660 basehttp "GET /storage/import/?page=2 HTTP/1.1" 200 19425
+INFO 2024-12-29 23:59:02,722 basehttp "GET /storage/import/?page=1 HTTP/1.1" 200 20277
+INFO 2024-12-29 23:59:07,094 basehttp "GET /storage/import/?page=2 HTTP/1.1" 200 19425
+INFO 2024-12-29 23:59:08,156 basehttp "GET /storage/import/?page=1 HTTP/1.1" 200 20277
+INFO 2024-12-29 23:59:20,846 basehttp "GET /storage/import/16/ HTTP/1.1" 200 11432
+INFO 2024-12-30 00:00:32,854 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 00:00:35,045 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 00:00:42,455 basehttp "GET /storage/import/?page=1 HTTP/1.1" 200 20277
+INFO 2024-12-30 00:02:10,181 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 00:02:12,598 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 00:02:17,504 basehttp "GET /storage/import/?page=1 HTTP/1.1" 200 20277
+INFO 2024-12-30 00:02:17,554 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-30 00:02:17,555 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-30 00:02:17,574 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-30 00:02:17,591 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-30 00:02:17,610 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-30 00:02:17,612 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-30 00:02:17,618 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-30 00:02:17,628 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-30 00:02:17,636 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-30 00:02:17,682 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-30 00:02:17,683 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-30 00:02:17,693 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-30 00:02:17,754 log Not Found: /favicon.ico
+WARNING 2024-12-30 00:02:17,755 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-30 00:02:19,129 basehttp "GET /storage/import/new/ HTTP/1.1" 200 15802
+INFO 2024-12-30 00:03:18,705 autoreload /workspaces/FinStor/storage/forms.py changed, reloading.
+INFO 2024-12-30 00:03:21,106 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 00:03:24,742 basehttp "GET /storage/import/new/ HTTP/1.1" 200 15631
+INFO 2024-12-30 00:03:34,942 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+ERROR 2024-12-30 00:03:40,048 log Internal Server Error: /storage/import/new/add/
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/vscode/.local/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/workspaces/FinStor/storage/views.py", line 206, in import_item_add
+    record_data = {field: request.POST.get(field) for field in import_record_fields if request.GTE.get(field)}
+                                                                                       ^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'GTE'
+ERROR 2024-12-30 00:03:40,057 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=Hmo44EHYYqVFA6JcqEKr9STW8umKNyiPrPrAyTtYUZwgv3e78OBAxUfVirCcAqcV&asset_cat=2&asset=2&quantity=2&price=2&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 500 72815
+INFO 2024-12-30 00:03:58,567 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 00:04:00,933 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 00:04:03,215 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=Hmo44EHYYqVFA6JcqEKr9STW8umKNyiPrPrAyTtYUZwgv3e78OBAxUfVirCcAqcV&asset_cat=2&asset=2&quantity=2&price=2&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 00:04:03,361 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16021
+INFO 2024-12-30 00:04:55,878 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 00:04:58,118 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 00:05:10,260 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-30 00:05:13,044 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=2tqHE97bqIB3YAwOqPYHPZXO2t83NLcUMWtd8oTbmhcETx1J8ZPQd1jNcqovAD60&asset_cat=2&asset=2&quantity=3&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 00:05:13,197 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16024
+INFO 2024-12-30 00:07:07,987 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 00:07:10,510 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 00:07:34,777 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 00:07:37,134 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 00:07:42,068 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 00:07:43,169 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 00:07:43,262 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-30 00:07:43,263 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-30 00:07:43,268 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-30 00:07:43,277 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-30 00:07:43,293 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-30 00:07:43,296 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-30 00:07:43,302 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-30 00:07:43,310 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-30 00:07:43,314 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-30 00:07:43,355 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-30 00:07:43,356 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-30 00:07:43,366 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-30 00:07:43,433 log Not Found: /favicon.ico
+WARNING 2024-12-30 00:07:43,434 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-30 00:07:44,639 basehttp "GET /storage/import/ HTTP/1.1" 200 20211
+INFO 2024-12-30 00:07:45,531 basehttp "GET /storage/import/new/ HTTP/1.1" 200 15631
+INFO 2024-12-30 00:07:49,869 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-30 00:08:08,978 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=h8K65zOqiMlyVLGPcZYUisjoTet1qJrU1BNCzOAqelW9QIbKU9P3GuFn3bJtdBl0&asset_cat=1&asset=1&quantity=9&price=150000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 00:08:09,050 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16042
+INFO 2024-12-30 00:08:37,985 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 00:08:40,540 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 00:22:42,034 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17225
+INFO 2024-12-30 00:22:42,129 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-30 00:22:42,130 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-30 00:22:42,137 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-30 00:22:42,168 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-30 00:22:42,175 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-30 00:22:42,175 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-30 00:22:42,181 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-30 00:22:42,202 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-30 00:22:42,210 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-30 00:22:42,271 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-30 00:22:42,274 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-30 00:22:42,283 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-30 00:22:42,406 log Not Found: /favicon.ico
+WARNING 2024-12-30 00:22:42,408 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-30 00:23:01,107 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-30 00:23:04,379 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=EhjQRBGUV5EviuuER8oeeF8nogHKxi88oKmmlQsUREf6drZzzifnCHumydXcka2e&asset_cat=2&asset=2&quantity=3&price=4&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 00:23:04,458 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17616
+INFO 2024-12-30 00:23:37,562 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 00:23:37,748 basehttp "GET /storage/import/ HTTP/1.1" 200 20211
+INFO 2024-12-30 00:25:21,312 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16814
+INFO 2024-12-30 00:25:26,410 basehttp "GET /storage/import/new/cancel HTTP/1.1" 302 0
+INFO 2024-12-30 00:25:26,598 basehttp "GET /storage/import/ HTTP/1.1" 200 20211
+INFO 2024-12-30 00:34:21,057 basehttp "GET /storage/import/?page=2 HTTP/1.1" 200 20168
+INFO 2024-12-30 00:34:27,799 basehttp "GET /storage/import/?page=1 HTTP/1.1" 200 20277
+INFO 2024-12-30 10:53:02,735 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16926
+INFO 2024-12-30 10:53:02,805 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:02,822 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:02,823 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:02,823 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:02,824 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:02,829 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:02,829 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:02,839 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:02,844 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:02,873 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:02,873 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:02,876 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 304 0
+INFO 2024-12-30 10:53:15,736 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-30 10:53:45,297 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=WkK9VWoD8vhiCVNm3FPZll9iIGV72dGXGNNFpbaD44STxSihLPG8JnvhSDbzP5A3&asset_cat=1&asset=1&quantity=1&price=150&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 10:53:45,373 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17330
+INFO 2024-12-30 10:53:51,679 basehttp "POST /storage/import/new/ HTTP/1.1" 200 17514
+INFO 2024-12-30 10:53:51,757 basehttp "GET /static/fonts/Shabwa-Bold.ttf HTTP/1.1" 304 0
+INFO 2024-12-30 10:54:08,138 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 10:54:08,285 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 11:17:27,005 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 11:17:29,944 basehttp "GET /storage/assets/ HTTP/1.1" 200 18137
+INFO 2024-12-30 11:17:33,542 basehttp "GET /storage/assets/?category=1 HTTP/1.1" 200 15889
+INFO 2024-12-30 11:17:34,001 basehttp "GET /storage/assets/?category=2 HTTP/1.1" 200 15207
+INFO 2024-12-30 11:17:34,366 basehttp "GET /storage/assets/?category=3 HTTP/1.1" 200 15909
+INFO 2024-12-30 11:17:34,801 basehttp "GET /storage/assets/? HTTP/1.1" 200 18137
+INFO 2024-12-30 11:17:35,977 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 11:17:38,344 basehttp "GET /storage/import/?page=2 HTTP/1.1" 200 20607
+INFO 2024-12-30 11:17:38,938 basehttp "GET /storage/import/?page=1 HTTP/1.1" 200 20477
+INFO 2024-12-30 11:17:41,825 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 11:17:42,542 basehttp "GET /storage/assets/ HTTP/1.1" 200 18137
+INFO 2024-12-30 11:17:43,136 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 11:17:43,806 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16926
+INFO 2024-12-30 11:17:46,831 basehttp "GET /storage/import/new/cancel HTTP/1.1" 302 0
+INFO 2024-12-30 11:17:47,031 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 11:17:49,809 basehttp "GET /storage/assets/ HTTP/1.1" 200 18137
+INFO 2024-12-30 11:17:52,551 basehttp "GET /storage/assets/?category=1 HTTP/1.1" 200 15889
+INFO 2024-12-30 11:17:52,885 basehttp "GET /storage/assets/?category=2 HTTP/1.1" 200 15207
+INFO 2024-12-30 11:17:53,289 basehttp "GET /storage/assets/?category=3 HTTP/1.1" 200 15909
+INFO 2024-12-30 11:17:54,059 basehttp "GET /storage/assets/? HTTP/1.1" 200 18137
+INFO 2024-12-30 11:17:54,883 basehttp "GET /storage/assets/?category=3 HTTP/1.1" 200 15909
+INFO 2024-12-30 11:17:55,541 basehttp "GET /storage/assets/?category=4 HTTP/1.1" 200 14578
+INFO 2024-12-30 11:18:04,797 basehttp "POST /storage/assets/?category=4 HTTP/1.1" 302 0
+INFO 2024-12-30 11:18:04,918 basehttp "GET /storage/assets/?category=4 HTTP/1.1" 200 15212
+INFO 2024-12-30 11:18:12,587 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 11:18:13,799 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 11:18:15,009 basehttp "GET /storage/import/16/ HTTP/1.1" 200 11432
+INFO 2024-12-30 11:18:19,150 basehttp "GET /storage/import/18/ HTTP/1.1" 200 12020
+INFO 2024-12-30 11:22:57,819 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 11:22:58,449 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 11:23:00,224 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 12:14:05,214 basehttp "GET /manage/department/ HTTP/1.1" 200 14232
+INFO 2024-12-30 12:14:08,479 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15419
+INFO 2024-12-30 12:14:09,116 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-30 12:14:09,650 basehttp "GET /manage/company/ HTTP/1.1" 200 15191
+INFO 2024-12-30 12:14:10,241 basehttp "GET /admin/ HTTP/1.1" 200 14462
+INFO 2024-12-30 12:14:10,333 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2024-12-30 12:14:10,341 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2024-12-30 12:14:10,341 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2024-12-30 12:14:10,342 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2024-12-30 12:14:10,342 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2024-12-30 12:14:10,342 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2024-12-30 12:14:10,360 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2024-12-30 12:14:10,370 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2024-12-30 12:14:10,374 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2024-12-30 12:14:10,374 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2024-12-30 12:14:10,381 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2024-12-30 12:14:22,437 basehttp "GET /manage/department/ HTTP/1.1" 200 14232
+INFO 2024-12-30 12:15:43,924 basehttp "POST /manage/department/ HTTP/1.1" 200 14494
+INFO 2024-12-30 12:16:02,821 basehttp "GET /manage/department/?sort=type HTTP/1.1" 200 14232
+INFO 2024-12-30 12:16:03,925 basehttp "GET /manage/department/?sort=name HTTP/1.1" 200 14232
+INFO 2024-12-30 12:16:12,322 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 12:16:13,241 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15419
+INFO 2024-12-30 12:16:15,681 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-30 12:16:17,704 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-30 12:16:19,648 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-30 12:16:22,322 basehttp "GET /manage/department/ HTTP/1.1" 200 14232
+INFO 2024-12-30 12:16:30,927 basehttp "GET /manage/department/ HTTP/1.1" 200 14232
+INFO 2024-12-30 12:16:34,645 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 12:16:38,876 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-30 12:16:42,507 basehttp "GET /manage/company/ HTTP/1.1" 200 15191
+INFO 2024-12-30 12:17:05,592 basehttp "GET /admin/ HTTP/1.1" 200 12617
+INFO 2024-12-30 12:17:13,514 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-30 12:17:14,346 basehttp "GET /manage/affiliate/ HTTP/1.1" 200 15419
+INFO 2024-12-30 12:17:16,101 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-30 12:17:17,377 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-30 12:17:19,458 basehttp "GET /manage/employee/ HTTP/1.1" 200 16205
+INFO 2024-12-30 12:17:24,174 basehttp "GET /manage/department/ HTTP/1.1" 200 14232
+INFO 2024-12-30 12:17:27,555 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 12:17:30,845 basehttp "GET /storage/assets/ HTTP/1.1" 200 18808
+INFO 2024-12-30 12:17:34,809 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 12:17:37,698 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 12:17:44,364 basehttp "GET /get_assets/3/ HTTP/1.1" 200 231
+INFO 2024-12-30 12:18:53,867 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=lBJJScpgWCh8xzOnzXVw9KwOdRz0P1bN54MfmrbgSbSJswjih7MFxMSNnOPsCT5T&asset_cat=3&asset=5&quantity=3&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 12:18:53,942 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17382
+INFO 2024-12-30 12:18:57,835 basehttp "GET /get_assets/3/ HTTP/1.1" 200 231
+INFO 2024-12-30 12:19:03,699 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=jpSN4mI2jK6hxTPECRDRQclgLvu3ii9H3SVjyBu2fjHSsQkzk1u0eeHfVsKv5a3N&asset_cat=3&asset=4&quantity=1&price=5459&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 12:19:03,771 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17801
+INFO 2024-12-30 12:20:05,103 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 12:20:05,280 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 12:20:39,186 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 12:21:20,330 basehttp "GET /get_assets/3/ HTTP/1.1" 200 231
+INFO 2024-12-30 12:21:23,056 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-30 12:21:40,994 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-30 12:21:57,657 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-30 12:22:31,211 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=WCyatw7ma0cOhWnMdBKXNbrhVlueCuhCG5BGXLTm6zNpcTSHVLB6bdNg5iKGpmbI&asset_cat=1&asset=1&quantity=348&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 12:22:31,303 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17378
+INFO 2024-12-30 12:22:31,382 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-30 12:22:47,486 basehttp "GET /storage/import/new/cancel HTTP/1.1" 302 0
+INFO 2024-12-30 12:22:47,677 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 12:22:56,895 basehttp "GET /storage/import/?page=2 HTTP/1.1" 200 20607
+INFO 2024-12-30 12:22:58,046 basehttp "GET /storage/import/?page=1 HTTP/1.1" 200 20477
+INFO 2024-12-30 12:23:00,834 basehttp "GET /storage/import/?page=1&sort=date HTTP/1.1" 200 20375
+INFO 2024-12-30 12:23:01,663 basehttp "GET /storage/import/?page=1&sort=-date HTTP/1.1" 200 20537
+INFO 2024-12-30 12:23:02,930 basehttp "GET /storage/import/?page=1&sort=assign_number HTTP/1.1" 200 20571
+INFO 2024-12-30 12:23:03,466 basehttp "GET /storage/import/?page=1&sort=-assign_number HTTP/1.1" 200 20436
+INFO 2024-12-30 12:23:30,631 basehttp "GET /storage/import/?page=1&sort=assign_number HTTP/1.1" 200 20571
+INFO 2024-12-30 12:23:31,701 basehttp "GET /storage/import/?page=1&sort=date HTTP/1.1" 200 20375
+INFO 2024-12-30 12:23:32,674 basehttp "GET /storage/import/?page=1&sort=assign_number HTTP/1.1" 200 20571
+INFO 2024-12-30 12:23:33,798 basehttp "GET /storage/import/?page=1&sort=assign_date HTTP/1.1" 200 20408
+INFO 2024-12-30 12:23:34,663 basehttp "GET /storage/import/?page=1&sort=-assign_date HTTP/1.1" 200 20597
+INFO 2024-12-30 12:23:37,832 basehttp "GET /storage/import/?page=3&sort=-assign_date HTTP/1.1" 200 14639
+INFO 2024-12-30 12:23:51,108 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 12:23:53,295 basehttp "GET /storage/assets/ HTTP/1.1" 200 18808
+INFO 2024-12-30 12:23:59,585 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 12:24:01,068 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 12:24:02,755 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-30 12:24:06,996 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=Wmxw3fRupD1XzORNNMfjk0xGg2s0szzNGPA2xuDulcCyuLmIvW6sI2TFqZIsfrtT&asset_cat=2&asset=2&quantity=87&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 12:24:07,064 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17366
+INFO 2024-12-30 12:24:24,429 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 12:24:24,603 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 12:24:35,797 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 12:25:13,344 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 12:25:19,167 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-30 12:25:30,204 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=mfXHo7ll4B8TS0qAlqR5Ko47XGn2izPP6I0dSm7l0aJuNXVv3AIe8qq67DDu5rJV&asset_cat=2&asset=2&quantity=67&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 12:25:30,273 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17366
+INFO 2024-12-30 12:26:43,373 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-30 12:27:40,677 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=VEnjWrF8bg0mO323Y2sxGapqV1JA58AgF7qPqGr87PBXJ0xYGcjG4cLp5YZ2S0um&asset_cat=2&asset=2&quantity=56&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 12:27:40,756 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17366
+INFO 2024-12-30 12:28:18,314 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=VEnjWrF8bg0mO323Y2sxGapqV1JA58AgF7qPqGr87PBXJ0xYGcjG4cLp5YZ2S0um&asset_cat=2&asset=2&quantity=56&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 12:28:18,426 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17366
+INFO 2024-12-30 12:28:59,962 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 12:29:00,125 basehttp "GET /storage/import/ HTTP/1.1" 200 20411
+INFO 2024-12-30 12:29:11,572 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 12:29:12,794 basehttp "GET /get_assets/3/ HTTP/1.1" 200 231
+INFO 2024-12-30 12:29:16,674 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=8kKH6uEYrePOr9JdD4faRgKlzGl3H6qcSNNdAJqYnNqpm6e8le6jfi6kJDBvuYki&asset_cat=3&asset=4&quantity=67&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 12:29:16,765 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17389
+INFO 2024-12-30 12:29:27,747 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 12:29:27,971 basehttp "GET /storage/import/ HTTP/1.1" 200 20441
+INFO 2024-12-30 12:30:36,932 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 14:10:34,136 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 14:10:48,895 basehttp "GET / HTTP/1.1" 200 9764
+INFO 2024-12-30 14:10:49,021 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-30 14:10:52,322 basehttp "GET /storage/import/ HTTP/1.1" 200 20441
+INFO 2024-12-30 14:10:53,309 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 14:11:01,050 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-30 14:11:10,856 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=6dPGaHAiaHl106pdSJhoVCPc4Qaf3a90QGScEWmi6gWCV3U8AT8xjEbbeNqHQ236&asset_cat=1&asset=1&quantity=1&price=100000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 14:11:10,930 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17381
+INFO 2024-12-30 14:11:12,426 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-30 14:11:18,240 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=sutrzxqdtlHGWBTej1OqJZxEGLcq8vDtcXwX3McdpUihRyo91bFz71TDQIsSVnxz&asset_cat=1&asset=3&quantity=1&price=50000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 14:11:18,310 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17790
+INFO 2024-12-30 14:11:33,589 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 14:11:33,763 basehttp "GET /storage/import/ HTTP/1.1" 200 20464
+INFO 2024-12-30 14:11:35,707 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 14:11:35,915 basehttp "GET /storage/import/ HTTP/1.1" 200 20406
+INFO 2024-12-30 14:11:46,655 basehttp "GET /storage/import/?sort=trans_id HTTP/1.1" 200 20290
+INFO 2024-12-30 14:11:47,363 basehttp "GET /storage/import/?sort=-trans_id HTTP/1.1" 200 20523
+INFO 2024-12-30 14:12:04,529 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 14:12:10,042 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-30 14:12:21,698 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 14:12:28,929 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 14:12:29,069 basehttp "GET /storage/import/ HTTP/1.1" 200 20406
+INFO 2024-12-30 14:12:31,290 basehttp "GET /storage/import/?sort=trans_id HTTP/1.1" 200 20290
+INFO 2024-12-30 14:12:31,987 basehttp "GET /storage/import/?sort=-trans_id HTTP/1.1" 200 20448
+INFO 2024-12-30 14:12:35,235 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 14:12:37,272 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-30 14:12:49,262 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=0p2He8BlqnaQCwblLlwLKfVMmX66irCRKS5dInnlmWLrxtGgtvnU8hhLwUmy5jwX&asset_cat=2&asset=2&quantity=23&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 14:12:49,339 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17366
+INFO 2024-12-30 14:13:29,604 basehttp "GET /storage/assets/ HTTP/1.1" 200 18808
+INFO 2024-12-30 14:13:30,197 basehttp "GET /storage/import/ HTTP/1.1" 200 20406
+INFO 2024-12-30 14:13:33,284 basehttp "GET /storage/import/18/ HTTP/1.1" 200 12020
+INFO 2024-12-30 16:15:15,551 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 16:15:15,649 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-30 16:15:15,936 basehttp "GET /storage/import/ HTTP/1.1" 200 20406
+INFO 2024-12-30 16:15:18,133 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 16:50:21,308 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 16:50:23,843 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 16:50:25,041 basehttp "GET /storage/import/ HTTP/1.1" 200 20406
+INFO 2024-12-30 16:50:25,094 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 304 0
+INFO 2024-12-30 16:50:25,112 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 304 0
+INFO 2024-12-30 16:50:25,114 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 304 0
+INFO 2024-12-30 16:50:25,115 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 304 0
+INFO 2024-12-30 16:50:25,115 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 304 0
+INFO 2024-12-30 16:50:25,115 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 304 0
+INFO 2024-12-30 16:50:25,116 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 304 0
+INFO 2024-12-30 16:50:25,137 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 304 0
+INFO 2024-12-30 16:50:25,230 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 304 0
+INFO 2024-12-30 16:50:25,230 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 304 0
+INFO 2024-12-30 16:50:25,232 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 304 0
+INFO 2024-12-30 16:50:26,110 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 16:50:28,443 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-30 16:50:39,648 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=dZKBYsGN9hGhXh9QNV9BEW0IIfWfDdniXsN7sHsN5QhSSeELv50K2YmHSccHq5ho&asset_cat=1&asset=1&quantity=3&price=400000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 16:50:39,730 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17382
+INFO 2024-12-30 16:51:13,381 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 16:51:16,299 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 17:19:49,872 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 17:19:52,638 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 17:19:55,508 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 17:19:56,541 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 17:19:56,645 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-30 17:19:56,647 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-30 17:19:56,655 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-30 17:19:56,659 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-30 17:19:56,692 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-30 17:19:56,705 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-30 17:19:56,748 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-30 17:19:56,752 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-30 17:19:56,757 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-30 17:19:56,773 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-30 17:19:56,773 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+INFO 2024-12-30 17:19:56,901 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 17:19:56,989 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-30 17:19:57,015 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-30 17:19:57,022 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-30 17:19:57,024 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-30 17:19:57,025 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-30 17:19:57,029 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-30 17:19:57,038 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-30 17:19:57,045 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-30 17:19:57,067 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-30 17:19:57,069 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-30 17:19:57,078 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+INFO 2024-12-30 17:19:57,143 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 17:19:57,241 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-30 17:19:57,247 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-30 17:19:57,247 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-30 17:19:57,254 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-30 17:19:57,279 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-30 17:19:57,281 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-30 17:19:57,282 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-30 17:19:57,283 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-30 17:19:57,290 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-30 17:19:57,327 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-30 17:19:57,327 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-30 17:19:57,338 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-30 17:19:57,397 log Not Found: /favicon.ico
+WARNING 2024-12-30 17:19:57,398 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-30 17:20:00,345 basehttp "GET /storage/import/ HTTP/1.1" 200 20406
+INFO 2024-12-30 17:20:01,839 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 17:20:03,211 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 17:20:03,299 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-30 17:20:03,303 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-30 17:20:03,304 basehttp "GET /static/css/style.css HTTP/1.1" 200 7812
+INFO 2024-12-30 17:20:03,318 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-30 17:20:03,336 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-30 17:20:03,338 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-30 17:20:03,346 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-30 17:20:03,357 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-30 17:20:03,364 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-30 17:20:03,404 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-30 17:20:03,408 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-30 17:20:03,422 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-30 17:20:03,479 log Not Found: /favicon.ico
+WARNING 2024-12-30 17:20:03,487 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-30 17:20:04,621 basehttp "GET /storage/import/ HTTP/1.1" 200 20406
+INFO 2024-12-30 17:20:05,709 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 17:20:09,525 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-30 17:20:28,265 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=52qZidtr1UvBxcOPcdAZg0y9Qg9whoVFPvtvMsfrXt6cs9jKUnr8E2U80dpY4gPL&asset_cat=1&asset=1&quantity=1&price=80000&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 17:20:28,338 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17379
+INFO 2024-12-30 17:20:30,553 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 17:20:30,749 basehttp "GET /storage/import/ HTTP/1.1" 200 20406
+INFO 2024-12-30 17:20:32,646 basehttp "GET /storage/import/?sort=trans_id HTTP/1.1" 200 20290
+INFO 2024-12-30 17:20:33,144 basehttp "GET /storage/import/?sort=-trans_id HTTP/1.1" 200 20407
+INFO 2024-12-30 17:21:03,414 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 17:21:04,751 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-30 17:21:14,816 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=9Odcczi00ckgQP2srsaUTys4ezgYUBHWThgIGO40WLVRLMxn9C13hAO3owwqHtB2&asset_cat=2&asset=2&quantity=3&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 17:21:14,886 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17364
+INFO 2024-12-30 17:21:16,386 basehttp "GET /get_assets/3/ HTTP/1.1" 200 231
+INFO 2024-12-30 17:21:19,359 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=NK9xw0XwKgJjJ49gDzcqrN4ICyYsjdjTxdc30fJwGPkUE1EblJ3zPPqHMveU65dZ&asset_cat=3&asset=4&quantity=1&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 17:21:19,440 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17780
+INFO 2024-12-30 17:21:23,180 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17780
+INFO 2024-12-30 17:21:24,713 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17780
+INFO 2024-12-30 17:21:27,573 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 17:21:27,736 basehttp "GET /storage/import/ HTTP/1.1" 200 20406
+INFO 2024-12-30 17:21:29,387 basehttp "POST /storage/import/new/ HTTP/1.1" 200 17160
+INFO 2024-12-30 17:22:43,106 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 17:22:45,221 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 17:22:47,389 basehttp "POST /storage/import/new/ HTTP/1.1" 200 17160
+INFO 2024-12-30 17:26:40,108 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-30 17:26:41,866 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=e186Y1qjPghB2576rHPguI5C9eqPKoWhYubCsgcjLPScX2C19RGpSKrBjbGhxgQn&asset_cat=2&asset=2&quantity=1&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 17:26:41,991 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17364
+INFO 2024-12-30 17:26:50,045 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 17:26:50,228 basehttp "GET /storage/import/ HTTP/1.1" 200 21887
+INFO 2024-12-30 17:26:56,842 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 17:26:57,415 basehttp "GET /storage/import/ HTTP/1.1" 200 20572
+INFO 2024-12-30 17:27:00,013 basehttp "GET /storage/import/ HTTP/1.1" 200 20572
+INFO 2024-12-30 17:27:02,515 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 17:27:03,866 basehttp "GET /get_assets/4/ HTTP/1.1" 200 80
+INFO 2024-12-30 17:27:13,968 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=K0RnWi8Q0YHJoWjK8cowhm723QiNKyLuutUTqxUQWxikjTOFQmfFFot1dNyfxqFA&asset_cat=4&asset=6&quantity=3&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 17:27:14,051 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17371
+INFO 2024-12-30 17:27:14,673 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 17:27:14,861 basehttp "GET /storage/import/ HTTP/1.1" 200 20740
+INFO 2024-12-30 17:29:15,981 basehttp "GET /storage/import/ HTTP/1.1" 200 20953
+INFO 2024-12-30 17:30:04,447 basehttp "GET /storage/import/ HTTP/1.1" 200 20953
+INFO 2024-12-30 17:30:06,360 basehttp "GET /storage/import/ HTTP/1.1" 200 20953
+INFO 2024-12-30 17:30:06,459 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-30 17:30:06,468 basehttp "GET /static/css/style.css HTTP/1.1" 200 7885
+INFO 2024-12-30 17:30:06,469 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-30 17:30:06,473 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-30 17:30:06,498 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-30 17:30:06,506 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-30 17:30:06,510 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-30 17:30:06,511 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-30 17:30:06,516 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-30 17:30:06,562 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-30 17:30:06,563 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-30 17:30:06,574 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-30 17:30:06,625 log Not Found: /favicon.ico
+WARNING 2024-12-30 17:30:06,626 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-30 17:30:31,575 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 17:30:33,659 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 17:30:38,132 basehttp "GET /storage/import/ HTTP/1.1" 200 20953
+INFO 2024-12-30 17:30:38,199 basehttp "GET /static/flatpickr/flatpickr.min.css HTTP/1.1" 200 16166
+INFO 2024-12-30 17:30:38,201 basehttp "GET /static/flatpickr/monthSelect/style.css HTTP/1.1" 200 2822
+INFO 2024-12-30 17:30:38,208 basehttp "GET /static/css/style.css HTTP/1.1" 200 7885
+INFO 2024-12-30 17:30:38,214 basehttp "GET /static/bootstrap5/bootstrap-icons.css HTTP/1.1" 200 65625
+INFO 2024-12-30 17:30:38,246 basehttp "GET /static/flatpickr/flatpickr.min.js HTTP/1.1" 200 50679
+INFO 2024-12-30 17:30:38,247 basehttp "GET /static/flatpickr/monthSelect/index.js HTTP/1.1" 200 13627
+INFO 2024-12-30 17:30:38,255 basehttp "GET /static/flatpickr/locale/ar.js HTTP/1.1" 200 1928
+INFO 2024-12-30 17:30:38,262 basehttp "GET /static/bootstrap5/bootstrap.bundle.js HTTP/1.1" 200 207819
+INFO 2024-12-30 17:30:38,266 basehttp "GET /static/bootstrap5/bootstrap.rtl.css HTTP/1.1" 200 280259
+INFO 2024-12-30 17:30:38,315 basehttp "GET /static/fonts/Shabwa.ttf HTTP/1.1" 200 51148
+INFO 2024-12-30 17:30:38,316 basehttp "GET /static/fonts/Shabwa-Medium.ttf HTTP/1.1" 200 51776
+INFO 2024-12-30 17:30:38,331 basehttp "GET /static/bootstrap5/bootstrap-icons.woff2 HTTP/1.1" 200 130396
+WARNING 2024-12-30 17:30:38,404 log Not Found: /favicon.ico
+WARNING 2024-12-30 17:30:38,405 basehttp "GET /favicon.ico HTTP/1.1" 404 6386
+INFO 2024-12-30 17:30:41,441 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 17:30:46,390 basehttp "GET /get_assets/4/ HTTP/1.1" 200 80
+INFO 2024-12-30 17:30:49,360 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=QDToCJVEWjedj5Fxg0BZWt0YUfW7HMZqA6WU6YHESSPOe2asYas8kvmX4cczuETw&asset_cat=4&asset=6&quantity=3&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 17:30:49,435 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17371
+INFO 2024-12-30 17:30:49,509 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-30 17:31:01,220 basehttp "GET /get_assets/2/ HTTP/1.1" 200 65
+INFO 2024-12-30 17:31:07,115 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=wO1DOAFX8xL8P6tBFTjTlmWYMRNi57VHgh49iPrX46mJK3Ywn3a2JoiXWO3KSZPN&asset_cat=2&asset=2&quantity=8&price=80&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 17:31:07,181 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17764
+INFO 2024-12-30 17:31:07,249 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-30 17:31:14,976 basehttp "POST /storage/import/new/ HTTP/1.1" 302 0
+INFO 2024-12-30 17:31:15,084 basehttp "GET /storage/import/ HTTP/1.1" 200 21134
+INFO 2024-12-30 17:47:35,851 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 17:47:37,901 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 17:49:35,487 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 17:49:37,715 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 17:50:11,566 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 17:50:13,924 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 17:54:40,981 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 17:54:43,261 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 17:54:45,901 basehttp "GET /storage/import/new/ HTTP/1.1" 200 16971
+INFO 2024-12-30 17:54:46,011 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-30 17:54:53,541 basehttp "GET /get_assets/1/ HTTP/1.1" 200 163
+INFO 2024-12-30 17:55:03,420 basehttp "GET /storage/import/new/add/?csrfmiddlewaretoken=uLQwf7K4dJ4yIuvkXYchru0IEyhOuYkoeeT2Jmw49iF9Dr0fF83qPwmHOvxghQeu&asset_cat=1&asset=1&quantity=3&price=1.00&submit=%D8%A7%D8%B6%D8%A7%D9%81%D8%A9+%D8%B5%D9%86%D9%81 HTTP/1.1" 302 0
+INFO 2024-12-30 17:55:03,508 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17374
+INFO 2024-12-30 17:58:29,683 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 17:58:31,845 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 17:58:34,232 basehttp "GET /storage/import/new/ HTTP/1.1" 200 17374
+INFO 2024-12-30 17:58:34,306 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-30 18:01:22,822 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 18:01:24,974 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 18:01:27,228 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 18:01:29,037 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 18:02:36,063 autoreload /workspaces/FinStor/storage/views.py changed, reloading.
+INFO 2024-12-30 18:02:38,073 autoreload Watching for file changes with StatReloader
+INFO 2024-12-30 18:06:41,714 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 18:06:41,801 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2024-12-30 18:06:42,715 basehttp "GET /storage/assets/ HTTP/1.1" 200 18808
+INFO 2024-12-30 18:06:57,849 basehttp "GET /storage/assets/?category=1 HTTP/1.1" 200 15889
+INFO 2024-12-30 18:06:58,411 basehttp "GET /storage/assets/?category=2 HTTP/1.1" 200 15207
+INFO 2024-12-30 18:06:59,626 basehttp "GET /storage/assets/? HTTP/1.1" 200 18808
+INFO 2024-12-30 18:07:25,709 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 18:07:29,215 basehttp "GET /storage/import/ HTTP/1.1" 200 20953
+INFO 2024-12-30 18:07:34,241 basehttp "GET /storage/categories/ HTTP/1.1" 200 13965
+INFO 2024-12-30 18:07:37,671 basehttp "GET /storage/assets/ HTTP/1.1" 200 18808
+INFO 2024-12-30 18:07:42,476 basehttp "GET /storage/import/ HTTP/1.1" 200 20953
